@@ -8,7 +8,7 @@ import WhyAmetecs from "./components/WhyAmetecs";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Testimonials from "./Components/Testimonials";
+import Testimonials from "./components/Testimonials";
 import TechnologiesSection from "./components/TechnologiesSection";
 import WhatsappButton from "./components/WhatsappButton";
 import ThemeToggle from "./components/ThemeToggle";
