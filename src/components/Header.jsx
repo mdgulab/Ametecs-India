@@ -75,7 +75,7 @@ const whatWeDo = [
     link: "/services"
   },
   {
-    id: "products",
+    id: "Products",
     label: "Products",
     items: [
       { title: "SmartDCM", subtitle: "Collection CRM + Dialer" },
@@ -85,7 +85,7 @@ const whatWeDo = [
       { title: "CoreOps CRM", subtitle: "Enterprise workflow CRM" },
       { title: "SmartRMI", subtitle: "AI speech analytics" }
     ],
-    link: "/products"
+    link: "/Products"
   },
   {
     id: "platforms",

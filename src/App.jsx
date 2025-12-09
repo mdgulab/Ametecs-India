@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import WhatWeDo from "./components/WhatWeDo";
 import IndustriesSection from "./components/IndustriesSection";
-import WhyAmetecs from "./components/WhyAmetecs";
+import  WhyAmetecsTimeline from "./components/WhyAmetecs";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -13,10 +13,12 @@ import TechnologiesSection from "./components/TechnologiesSection";
 import WhatsappButton from "./components/WhatsappButton";
 import ThemeToggle from "./components/ThemeToggle";
 import BackgroundEffects from "./components/BackgroundEffects";
-import AppointmentSection from "./components/AppointmentSection";
-import PartnersAndStats from "./components/PartnersAndStats";
+
 import TeamSection from "./components/TeamSection";
 import PartnershipSection from "./components/partnership";
+
+import ProductShowcaseSlider from "./components/ProductSlider";
+// import WhyAmetecs from "./components/WhyAmetecs";
 
 export default function App() {
   return (
@@ -30,11 +32,13 @@ export default function App() {
           element={
             <>
               <Hero />
-              <PartnersAndStats />
+              <ProductShowcaseSlider/>
+              {/* <PartnersAndStats /> */}
               <WhatWeDo />
               <IndustriesSection />
               <TeamSection />
-              <WhyAmetecs />
+              
+              <WhyAmetecsTimeline/>
               <PartnershipSection/>
               
               <Testimonials />
@@ -43,7 +47,7 @@ export default function App() {
             </>
           }
         />
-
+<Route path="/Products" element={<ProductShowcaseSlider/>}/>
         {/* ABOUT PAGE */}
         <Route path="/about" element={<About />}/> 
         <Route path="/contact" element={<Contact/>}/>

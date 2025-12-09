@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import RotatingTestimonials from "./RotatingTestimonials";
 import { useEffect } from "react";
+import ProjectSlider from "./ProductSlider";
 
 export default function Hero() {
 useEffect(() => {
@@ -31,6 +32,7 @@ useEffect(() => {
     >
        
    <RotatingTestimonials />
+  
 
         {/* THEME GRADIENT BASE */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff] via-[#9cdeff] to-[#ffffff]" /> */}
