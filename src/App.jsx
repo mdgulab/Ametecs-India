@@ -11,7 +11,7 @@ import Contact from "./components/Contact";
 import Testimonials from "./components/Testimonials";
 import TechnologiesSection from "./components/TechnologiesSection";
 import WhatsappButton from "./components/WhatsappButton";
-import ThemeToggle from "./components/ThemeToggle";
+// import ThemeToggle from "./components/ThemeToggle";
 import BackgroundEffects from "./components/BackgroundEffects";
 
 import TeamSection from "./components/TeamSection";

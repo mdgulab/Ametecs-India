@@ -3,8 +3,9 @@
 // =======================
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   FiChevronDown,
   FiChevronRight,
@@ -110,46 +111,53 @@ function scrollToId(id) {
 }
 
 function Header() {
-  const [openMega, setOpenMega] = useState(null); // "who" | "what" | null
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [openMega, setOpenMega] = useState(null);
   const [whoIndex, setWhoIndex] = useState(0);
   const [whatIndex, setWhatIndex] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const closeMega = () => setOpenMega(null);
 
-  const handleLogoClick = () => {
-    closeMega();
-    if (window.location.pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+const handleLogoClick = () => {
+  closeMega();
+
+  if (location.pathname === "/") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    navigate("/");
+  }
+};
+
+ const handleWhoItemClick = (item) => {
+  closeMega();
+
+  // Scroll sections on home page
+  if (item.id === "team") {
+    if (location.pathname === "/") {
+      scrollToId("teamsection");
     } else {
-      window.location.href = "/";
+      navigate("/#teamsection");
     }
-  };
+    return;
+  }
 
-  const handleWhoItemClick = (item) => {
-    closeMega();
-    // special handling for internal sections
-    if (item.id === "team") {
-      if (window.location.pathname === "/") {
-        scrollToId("teamsection");
-      } else {
-        window.location.href = "/#teamsection";
-      }
-      return;
+  if (item.id === "partners") {
+    if (location.pathname === "/") {
+      scrollToId("partnership");
+    } else {
+      navigate("/#partnership");
     }
+    return;
+  }
 
-    if (item.id === "partners") {
-      if (window.location.pathname === "/") {
-        scrollToId("partnership");
-      } else {
-        window.location.href = "/#partnership";
-      }
-      return;
-    }
+  // Normal route navigation (About, Blogs etc.)
+  navigate(item.link);
+};
 
-    // normal page link
-    window.location.href = item.link;
-  };
+
 
   return (
     <header
@@ -159,6 +167,8 @@ function Header() {
         lg:bg-white/70 lg:backdrop-blur-xl lg:shadow-lg
       "
     >
+
+
       {/* TOP NAV BAR */}
       <div className="container mx-auto px-4 lg:px-6 py-3 lg:py-4 flex justify-between items-center">
         {/* LOGO */}
