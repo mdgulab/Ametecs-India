@@ -47,6 +47,7 @@ export default function App() {
             </>
           }
         />
+        <Route path="/PartnerContact" element={<PartnershipSection/>}/>
 <Route path="/Products" element={<ProductShowcaseSlider/>}/>
         {/* ABOUT PAGE */}
         <Route path="/about" element={<About />}/> 
@@ -59,8 +60,37 @@ export default function App() {
 
       {/* GLOBAL COMPONENTS */}
       <BackgroundEffects />
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
       <WhatsappButton />
+            {/* CTA BAND */}
+      <section className="bg-[#006699] text-white py-14">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div>
+            <h3 className="text-xl font-bold">Need assistance?</h3>
+            <p className="opacity-90 text-sm">
+              Our support and sales teams are ready to help within 1 business day.
+            </p>
+          </div>
+
+          <div className="flex gap-3">
+            <a
+              href="/contact"
+              className="bg-white text-[#006699] px-6 py-3 rounded-lg font-semibold shadow"
+            >
+              Request Demo
+            </a>
+            <a
+              href="mailto:support@ametecs.com"
+              className="border border-white/40 px-6 py-3 rounded-lg font-semibold"
+            >
+              Email Us
+            </a>
+           
+          </div>
+          
+        </div>
+        
+      </section>
       <Footer />
     </div>
   );

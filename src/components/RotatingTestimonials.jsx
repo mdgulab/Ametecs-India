@@ -1,84 +1,155 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const testimonials = [
-  { id: 1, name: "Jenn F.", role: "Marketing Director @ Square", text: "I feel like I’ve learned as much from Ametecs as I did completing my masters. It's the first thing I read every morning.", img: "/assets/feedback1.jpg" },
-  { id: 2, name: "Arun K.", role: "Team Lead @ Meta", text: "Ametecs CRM and automation changed how I manage my team. Couldn’t imagine scaling without it.", img: "/assets/feedback2.jpg" },
-  { id: 3, name: "Priya S.", role: "Ops Manager @ Razorpay", text: "SmartDCM insights are next-level. Our collections improved dramatically.", img: "/assets/feedback3.jpg" },
-  { id: 4, name: "Rahul M.", role: "Founder @ FinTechPro", text: "Super easy onboarding, amazing UI and the team support is unmatched.", img: "/assets/feedback4.jpg" },
-  { id: 5, name: "Deepa L.", role: "Sales Head @ HDFC", text: "AI reports saved my team hours every single day. Game changer.", img: "/assets/feedback5.jpg" },
+  {
+    id: 1,
+    name: "Jenn F.",
+    role: "Marketing Director @ Square",
+    text: "I feel like I’ve learned as much from Ametecs as I did completing my masters. It's the first thing I read every morning.",
+    img: "/assets/feedback1.jpg",
+  },
+  {
+    id: 2,
+    name: "Arun K.",
+    role: "Team Lead @ Meta",
+    text: "Ametecs CRM and automation changed how I manage my team. Couldn’t imagine scaling without it.",
+    img: "/assets/feedback2.jpg",
+  },
+  {
+    id: 3,
+    name: "Priya S.",
+    role: "Ops Manager @ Razorpay",
+    text: "SmartDCM insights are next-level. Our collections improved dramatically.",
+    img: "/assets/feedback3.jpg",
+  },
+  {
+    id: 4,
+    name: "Rahul M.",
+    role: "Founder @ FinTechPro",
+    text: "Super easy onboarding, amazing UI and the team support is unmatched.",
+    img: "/assets/feedback4.jpg",
+  },
+  {
+    id: 5,
+    name: "Deepa L.",
+    role: "Sales Head @ HDFC",
+    text: "AI reports saved my team hours every single day. Game changer.",
+    img: "/assets/feedback5.jpg",
+  },
 ];
 
 export default function RotatingTestimonials() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const i = setInterval(() => {
+    const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
-    }, 2500);
-    return () => clearInterval(i);
+    }, 3000);
+    return () => clearInterval(timer);
   }, []);
 
+  const active = testimonials[index];
+
   return (
-    <div className="absolute right-20 top-30px -translate-y-1/2 w-[450px] h-[350px] pointer-events-none">
-      <div className="relative w-full h-full">
-        {testimonials.map((item, i) => {
-          const position = (i - index + testimonials.length) % testimonials.length;
+    <div className="absolute right-1/4 top-20px -translate-y-1/4 w-[380px] pointer-events-none">
+      <div className="relative w-full rounded-3xl bg-rgba(255, 255, 255, 0.12)/10 border border-slate-10 shadow-[0_18px_40px_rgba(15,23,42,0.12)] px-5 py-5 pointer-events-auto">
+        {/* Top label */}
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#006699]">
+              Customer voices
+            </p>
+            <p className="text-xs text-slate-500">
+              Real teams using Ametecs every day
+            </p>
+          </div>
+          <div className="flex flex-col items-end text-xs text-slate-400">
+            <span>
+              {String(index + 1).padStart(2, "0")}/
+              {String(testimonials.length).padStart(2, "0")}
+            </span>
+          </div>
+        </div>
 
-          return (
-          <motion.div
-  key={item.id}
-  className="absolute w-[320px] h-[360px] rounded-2xl p-[2px]"
+        {/* Chat bubble */}
+        <div className="mt-1 mb-4">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative inline-block max-w-full"
+            >
+              {/* bubble shape */}
+              <div className="relative max-w-full rounded-2xl rounded-tl-sm bg-sky-50 border border-sky-100 px-4 py-3.5">
+                <div className="absolute -left-2 top-3 h-3 w-3 rotate-45 border-l border-t border-sky-100 bg-sky-50" />
+                <p className="text-sm leading-relaxed text-slate-700">
+                  {active.text}
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
-  initial={false}
-  animate={{
-    x: position === 0 ? 0 : position === 1 ? 40 : position === 2 ? 80 : 120,
-    scale: position === 0 ? 1.05 : 0.9,
-    opacity: position > 3 ? 0 : 1,
-    rotate: position === 0 ? -1 : position === 1 ? 1 : 6,
-    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-  }}
-  transition={{
-    type: "spring", stiffness: 120, damping: 14,
-    backgroundPosition: { duration: 6, repeat: Infinity, ease: "linear" }
-  }}
-  style={{
-    zIndex: testimonials.length - position,
-    background:
-      "linear-gradient(135deg, #bb10ff3a 2%, #00669963 50%, #00eaff3d 100%)",
-    backgroundSize: "100% 100%",
-    boxShadow: position === 0
-      ? "0 0 5px rgba(0, 149, 255, 0.43)"
-      : "0 0 8px rgba(0, 149, 255, 0.35)",
-  }}
->
-  {/* Inner Glass Card */}
-  <div
-    className="w-full h-full rounded-2xl backdrop-blur-2xl p-6
-               border border-white/5 shadow-lg text-white
-               bg-[rgba(0, 0, 0, 0.4)]"
-  >
-    <img
-      src={item.img}
-      className="w-16 h-16 rounded-full mx-auto mb-4 object-cover border border-white/30 shadow-md"
-    />
+        {/* Name / role */}
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2.5">
+            <img
+              src={active.img}
+              alt={active.name}
+              className="h-9 w-9 rounded-full object-cover border border-slate-100"
+            />
+            <div>
+              <p className="text-sm font-semibold text-slate-900">
+                {active.name}
+              </p>
+              <p className="text-[11px] text-slate-500">{active.role}</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-1 text-[10px] text-amber-500">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+        </div>
 
-    <p className="text-center leading-relaxed text-gray-100 opacity-100">
-      {item.text}
-    </p>
-
-    <p className="mt-4 text-center font-semibold text-[#050505] drop-shadow">
-      {item.name}
-    </p>
-
-    <p className="text-center text-sm text-[#680099] opacity-100">
-      {item.role}
-    </p>
-  </div>
-</motion.div>
-
-          );
-        })}
+        {/* Avatars row selector */}
+        <div className="mt-2 flex items-center justify-between">
+          <p className="text-[11px] text-slate-400">
+            Tap a face to read their story
+          </p>
+          <div className="flex items-center gap-1.5">
+            {testimonials.map((item, i) => {
+              const isActive = i === index;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setIndex(i)}
+                  className={`
+                    relative h-7 w-7 rounded-full border
+                    overflow-hidden transition-all duration-200
+                    ${isActive ? "border-[#006699] scale-110" : "border-slate-200 scale-100 opacity-70 hover:opacity-100"}
+                  `}
+                >
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="h-full w-full object-cover"
+                  />
+                  {isActive && (
+                    <span className="absolute inset-0 rounded-full ring-2 ring-offset-1 ring-[#006699] ring-offset-white pointer-events-none" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );
