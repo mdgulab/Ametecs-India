@@ -1,4 +1,3 @@
-
 // =======================
 // Ametecs Mega Header
 // =======================
@@ -10,7 +9,7 @@ import {
   FiChevronDown,
   FiChevronRight,
   FiMenu,
-  FiX
+  FiX,
 } from "react-icons/fi";
 
 // =======================
@@ -26,7 +25,7 @@ const whoWeAre = [
       "Ametecs builds CRM, Dialers, Telephony and AI-driven communication technology powering NBFCs, call centers and enterprises.",
     image: "/images/about.jpg",
     link: "/about",
-    buttonText: "About Us"
+    buttonText: "About Us",
   },
   {
     id: "partners",
@@ -35,8 +34,8 @@ const whoWeAre = [
     description:
       "Partner with Ametecs for telecom, cloud, CRM, dialer and AI integrations across industries.",
     image: "/images/partners.jpg",
-    link: "#partneship",
-    buttonText: "Explore Partnership"
+    link: "#partnership",
+    buttonText: "Explore Partnership",
   },
   {
     id: "blogs",
@@ -46,7 +45,7 @@ const whoWeAre = [
       "Deep insights from 17+ years in telephony, CRM development and customer communication.",
     image: "/images/blogs.jpg",
     link: "/blogs",
-    buttonText: "Read Blogs"
+    buttonText: "Read Blogs",
   },
   {
     id: "team",
@@ -56,8 +55,8 @@ const whoWeAre = [
       "From telecom to enterprise SaaS, our leaders drive automation and operational excellence.",
     image: "/images/team.jpg",
     link: "#teamsection",
-    buttonText: "Meet Leadership"
-  }
+    buttonText: "Meet Leadership",
+  },
 ];
 
 const whatWeDo = [
@@ -70,12 +69,12 @@ const whatWeDo = [
       { title: "Cloud Telephony", subtitle: "IVR, WebRTC, SmartPing" },
       { title: "Automation", subtitle: "RPA, queue systems, bots" },
       { title: "DLT Compliance", subtitle: "TRAI, DoT, RBI-ready workflows" },
-      { title: "Reports & Analytics", subtitle: "Dashboards, BI, RMI" }
+      { title: "Reports & Analytics", subtitle: "Dashboards, BI, RMI" },
     ],
-    link: "/services"
+    link: "/services",
   },
   {
-    id: "Products",
+    id: "products",
     label: "Products",
     items: [
       { title: "SmartDCM", subtitle: "Collection CRM + Dialer" },
@@ -83,9 +82,9 @@ const whatWeDo = [
       { title: "Telozar", subtitle: "Remote BPO staff control" },
       { title: "SmartPayroll", subtitle: "HR & payroll automation" },
       { title: "CoreOps CRM", subtitle: "Enterprise workflow CRM" },
-      { title: "SmartRMI", subtitle: "AI speech analytics" }
+      { title: "SmartRMI", subtitle: "AI speech analytics" },
     ],
-    link: "/Products"
+    link: "/products",
   },
   {
     id: "platforms",
@@ -96,53 +95,86 @@ const whatWeDo = [
       { title: "FlexiDialer", subtitle: "Predictive dialer" },
       { title: "WebRTC Connect", subtitle: "Browser calling" },
       { title: "WABA", subtitle: "WhatsApp messaging" },
-      { title: "API Reporting", subtitle: "REST APIs" }
+      { title: "API Reporting", subtitle: "REST APIs" },
     ],
-    link: "/platforms"
-  }
+    link: "/platforms",
+  },
 ];
 
-// =======================
-// HEADER COMPONENT
-// =======================
+// helper: smooth scroll to id (for home page)
+function scrollToId(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const y = el.getBoundingClientRect().top + window.scrollY - 120;
+  window.scrollTo({ top: y, behavior: "smooth" });
+}
 
 function Header() {
-  const [openMega, setOpenMega] = useState(null);
+  const [openMega, setOpenMega] = useState(null); // "who" | "what" | null
   const [whoIndex, setWhoIndex] = useState(0);
   const [whatIndex, setWhatIndex] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const closeMega = () => setOpenMega(null);
 
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/40 backdrop-blur-xl shadow-lg border-b border-gray-200">
-
-      {/* TOP NAV BAR */}
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-
-        {/* LOGO */}
-        <div
-  className="flex items-center gap-3 cursor-pointer"
-  onClick={() => {
+  const handleLogoClick = () => {
     closeMega();
     if (window.location.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       window.location.href = "/";
     }
-  }}
->
-  <img
-    src="/logo.png"
-    className="h-14 transition hover:scale-110"
-    alt="Ametecs"
-  />
-</div>
+  };
 
+  const handleWhoItemClick = (item) => {
+    closeMega();
+    // special handling for internal sections
+    if (item.id === "team") {
+      if (window.location.pathname === "/") {
+        scrollToId("teamsection");
+      } else {
+        window.location.href = "/#teamsection";
+      }
+      return;
+    }
+
+    if (item.id === "partners") {
+      if (window.location.pathname === "/") {
+        scrollToId("partnership");
+      } else {
+        window.location.href = "/#partnership";
+      }
+      return;
+    }
+
+    // normal page link
+    window.location.href = item.link;
+  };
+
+  return (
+    <header
+      className="
+        fixed top-0 left-0 right-0 z-50 border-b border-gray-200
+        bg-white shadow-md
+        lg:bg-white/70 lg:backdrop-blur-xl lg:shadow-lg
+      "
+    >
+      {/* TOP NAV BAR */}
+      <div className="container mx-auto px-4 lg:px-6 py-3 lg:py-4 flex justify-between items-center">
+        {/* LOGO */}
+        <div
+          className="flex items-center gap-3 cursor-pointer"
+          onClick={handleLogoClick}
+        >
+          <img
+            src="/logo.png"
+            className="h-12 lg:h-14 transition-transform hover:scale-105"
+            alt="Ametecs"
+          />
+        </div>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden lg:flex items-center gap-10 font-semibold">
-
+        <nav className="hidden lg:flex items-center gap-8 font-semibold text-sm text-gray-800">
           {/* WHO WE ARE */}
           <div
             className="relative group cursor-pointer"
@@ -150,9 +182,13 @@ function Header() {
           >
             <span className="flex items-center gap-1">
               Who We Are
-              <FiChevronDown className={`${openMega === "who" ? "rotate-180" : ""}`} />
+              <FiChevronDown
+                className={`transition-transform ${
+                  openMega === "who" ? "rotate-180" : ""
+                }`}
+              />
             </span>
-            <div className="absolute left-0 top-full h-[2px] bg-blue-600 w-0 group-hover:w-full transition-all"></div>
+            <div className="absolute left-0 top-full h-[2px] bg-blue-600 w-0 group-hover:w-full transition-all" />
           </div>
 
           {/* WHAT WE DO */}
@@ -162,30 +198,37 @@ function Header() {
           >
             <span className="flex items-center gap-1">
               What We Do
-              <FiChevronDown className={`${openMega === "what" ? "rotate-180" : ""}`} />
+              <FiChevronDown
+                className={`transition-transform ${
+                  openMega === "what" ? "rotate-180" : ""
+                }`}
+              />
             </span>
-            <div className="absolute left-0 top-full h-[2px] bg-blue-600 w-0 group-hover:w-full transition-all"></div>
+            <div className="absolute left-0 top-full h-[2px] bg-blue-600 w-0 group-hover:w-full transition-all" />
           </div>
 
-          <Link className="hover:text-blue-700 relative" to="/career">
+          <Link className="hover:text-blue-700" to="/career">
             Career
           </Link>
 
-          <Link className="hover:text-blue-700 relative" to="/contact">
+          <Link className="hover:text-blue-700" to="/contact">
             Contact
           </Link>
         </nav>
 
-        {/* CTA BUTTON */}
+        {/* CTA BUTTON (desktop) */}
         <Link
           to="/contact"
-          className="hidden lg:flex bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow-lg"
+          className="hidden lg:inline-flex bg-blue-600 hover:bg-blue-700 text-white text-sm px-5 py-2.5 rounded-full shadow-lg"
         >
           Get in touch
         </Link>
 
         {/* MOBILE MENU ICON */}
-        <button className="lg:hidden text-3xl" onClick={() => setMobileOpen(true)}>
+        <button
+          className="lg:hidden text-2xl text-gray-800"
+          onClick={() => setMobileOpen(true)}
+        >
           <FiMenu />
         </button>
       </div>
@@ -197,78 +240,59 @@ function Header() {
       <AnimatePresence>
         {openMega === "who" && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: -8 }}
             onMouseLeave={closeMega}
-            className="absolute w-full bg-white/90 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,80,200,0.15)] border-t"
+            className="hidden lg:block absolute w-full bg-white/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,80,200,0.15)] border-t"
           >
             <div className="container mx-auto px-6 py-8 flex gap-8">
-
               {/* LEFT TABS */}
               <div className="w-64 border-r pr-4">
-                <h4 className="text-gray-500 text-sm mb-3">Who We Are</h4>
+                <h4 className="text-gray-500 text-xs font-semibold mb-3 uppercase tracking-[0.16em]">
+                  Who We Are
+                </h4>
                 {whoWeAre.map((item, idx) => (
-              <button
-  key={item.id}
-  onMouseEnter={() => setWhoIndex(idx)}
- /////////
-onClick={() => {
-  closeMega();
-
-  if (item.id === "team" || item.id === "partners") {
-    const targetId = item.id === "team" ? "teamsection" : "partnership";
-
-    if (window.location.pathname === "/") {
-      const el = document.getElementById(targetId);
-      if (!el) return;
-      const y = el.getBoundingClientRect().top + window.scrollY - 120;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    } else {
-      window.location.href = `/#${targetId}`;
-    }
-  } else {
-    window.location.href = item.link;
-  }
-}}
-
-
-/////////////////////
-
-  className={`block w-full text-left px-4 py-3 rounded-lg transition 
-    ${idx === whoIndex ? "bg-blue-50 text-blue-700" : "hover:bg-gray-100"}`}
->
-  {item.label}
-</button>
-
+                  <button
+                    key={item.id}
+                    onMouseEnter={() => setWhoIndex(idx)}
+                    onClick={() => handleWhoItemClick(item)}
+                    className={`block w-full text-left px-4 py-3 rounded-lg text-sm transition 
+                      ${
+                        idx === whoIndex
+                          ? "bg-blue-50 text-blue-700"
+                          : "hover:bg-gray-100"
+                      }`}
+                  >
+                    {item.label}
+                  </button>
                 ))}
               </div>
 
               {/* RIGHT CONTENT */}
               <div className="flex-1 flex gap-6">
-
                 {/* IMAGE */}
                 <img
                   src={whoWeAre[whoIndex].image}
-                  className="w-[40%] h-64 object-cover rounded-xl shadow-lg transition hover:scale-105"
+                  className="w-[40%] h-64 object-cover rounded-xl shadow-lg transition-transform duration-300 hover:scale-105"
+                  alt={whoWeAre[whoIndex].title}
                 />
 
                 {/* DETAILS */}
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-3">{whoWeAre[whoIndex].title}</h3>
-                  <p className="text-gray-700 mb-4">{whoWeAre[whoIndex].description}</p>
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                    {whoWeAre[whoIndex].title}
+                  </h3>
+                  <p className="text-gray-700 mb-5 text-sm leading-relaxed">
+                    {whoWeAre[whoIndex].description}
+                  </p>
 
                   <button
-  onClick={() => {
-    closeMega();
-    const el = document.getElementById("teamsection");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  }}
-  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow"
->
-
-                  {whoWeAre[whoIndex].buttonText}
-<FiChevronRight />
+                    onClick={() => handleWhoItemClick(whoWeAre[whoIndex])}
+                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow text-sm"
+                  >
+                    {whoWeAre[whoIndex].buttonText}
+                    <FiChevronRight />
                   </button>
                 </div>
               </div>
@@ -284,23 +308,28 @@ onClick={() => {
       <AnimatePresence>
         {openMega === "what" && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: -8 }}
             onMouseLeave={closeMega}
-            className="absolute w-full bg-white/90 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,80,200,0.15)] border-t"
+            className="hidden lg:block absolute w-full bg-white/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,80,200,0.15)] border-t"
           >
             <div className="container mx-auto px-6 py-8 flex gap-8">
-
               {/* LEFT TABS */}
               <div className="w-64 border-r pr-4">
-                <h4 className="text-gray-500 text-sm mb-3">What We Do</h4>
+                <h4 className="text-gray-500 text-xs font-semibold mb-3 uppercase tracking-[0.16em]">
+                  What We Do
+                </h4>
                 {whatWeDo.map((item, idx) => (
                   <button
                     key={item.id}
                     onMouseEnter={() => setWhatIndex(idx)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg transition 
-                      ${idx === whatIndex ? "bg-blue-50 text-blue-700" : "hover:bg-gray-100"}`}
+                    className={`block w-full text-left px-4 py-3 rounded-lg text-sm transition 
+                      ${
+                        idx === whatIndex
+                          ? "bg-blue-50 text-blue-700"
+                          : "hover:bg-gray-100"
+                      }`}
                   >
                     {item.label}
                   </button>
@@ -315,15 +344,17 @@ onClick={() => {
                     to={whatWeDo[whatIndex].link}
                     className="flex gap-3 p-3 rounded-lg hover:bg-blue-50 transition"
                   >
-                    <div
-                      className="w-10 h-10 rounded-full border text-blue-700 border-blue-300 flex items-center justify-center font-bold"
-                    >
+                    <div className="w-10 h-10 rounded-full border text-blue-700 border-blue-300 flex items-center justify-center font-bold text-sm">
                       {i + 1}
                     </div>
 
                     <div>
-                      <div className="font-semibold text-gray-900">{item.title}</div>
-                      <div className="text-xs text-gray-600">{item.subtitle}</div>
+                      <div className="font-semibold text-gray-900 text-sm">
+                        {item.title}
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        {item.subtitle}
+                      </div>
                     </div>
                   </Link>
                 ))}
@@ -339,62 +370,100 @@ onClick={() => {
 
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            className="fixed right-0 top-0 bottom-0 w-72 bg-white shadow-xl z-50"
-          >
-            <div className="flex justify-between items-center px-5 py-4 border-b">
-              <span className="font-bold">Menu</span>
-              <FiX className="text-3xl cursor-pointer" onClick={() => setMobileOpen(false)} />
-            </div>
-
-            <div className="p-5 space-y-4">
-              {/* WHO WE ARE */}
-              <div>
-                <div className="text-gray-500 text-xs mb-2">Who We Are</div>
-                {whoWeAre.map(item => (
-                  <Link key={item.id} to={item.link} className="block py-2">
-                    {item.label}
-                  </Link>
-                ))}
+          <>
+            {/* dark overlay behind drawer */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black lg:hidden"
+              onClick={() => setMobileOpen(false)}
+            />
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              className="fixed right-0 top-0 bottom-0 w-72 bg-white shadow-2xl z-50 lg:hidden flex flex-col"
+            >
+              <div className="flex justify-between items-center px-5 py-4 border-b">
+                <span className="font-bold text-gray-800 text-sm">
+                  Menu
+                </span>
+                <FiX
+                  className="text-2xl cursor-pointer"
+                  onClick={() => setMobileOpen(false)}
+                />
               </div>
 
-              {/* WHAT WE DO */}
-              <div>
-                <div className="text-gray-500 text-xs mb-2">What We Do</div>
-                {whatWeDo.map(item => (
-                  <Link key={item.id} to={item.link} className="block py-2">
-                    {item.label}
+              <div className="flex-1 overflow-y-auto p-5 space-y-5 text-sm">
+                {/* WHO WE ARE */}
+                <div>
+                  <div className="text-gray-500 text-xs mb-2 uppercase tracking-[0.16em]">
+                    Who We Are
+                  </div>
+                  {whoWeAre.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        setMobileOpen(false);
+                        handleWhoItemClick(item);
+                      }}
+                      className="block w-full text-left py-2 text-gray-800"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* WHAT WE DO */}
+                <div>
+                  <div className="text-gray-500 text-xs mb-2 uppercase tracking-[0.16em]">
+                    What We Do
+                  </div>
+                  {whatWeDo.map((item) => (
+                    <Link
+                      key={item.id}
+                      to={item.link}
+                      onClick={() => setMobileOpen(false)}
+                      className="block py-2 text-gray-800"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="pt-3 border-t border-gray-200 space-y-2">
+                  <Link
+                    to="/career"
+                    onClick={() => setMobileOpen(false)}
+                    className="block py-2 text-gray-800"
+                  >
+                    Career
                   </Link>
-                ))}
+
+                  <Link
+                    to="/contact"
+                    onClick={() => setMobileOpen(false)}
+                    className="block py-2 text-gray-800"
+                  >
+                    Contact
+                  </Link>
+                </div>
+
+                <Link
+                  to="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="block mt-3 bg-blue-600 text-white text-center py-3 rounded-full font-semibold"
+                >
+                  Get in touch
+                </Link>
               </div>
-
-              <Link to="/career" className="block pt-4 border-t py-2">
-                Career
-              </Link>
-
-              <Link to="/contact" className="block py-2">
-                Contact
-              </Link>
-
-              <Link
-                to="/contact"
-                className="block mt-4 bg-blue-600 text-white text-center py-3 rounded-full"
-              >
-                Get in touch
-              </Link>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
   );
 }
-
-// =====================================
-// REQUIRED DEFAULT EXPORT
-// =====================================
 
 export default Header;

@@ -63,7 +63,7 @@ export default function App() {
       {/* <ThemeToggle /> */}
       <WhatsappButton />
             {/* CTA BAND */}
-      <section className="bg-[#006699] text-white py-14">
+      {/* <section className="bg-[#006699] text-white py-14">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <h3 className="text-xl font-bold">Need assistance?</h3>
@@ -90,7 +90,7 @@ export default function App() {
           
         </div>
         
-      </section>
+      </section> */}
       <Footer />
     </div>
   );

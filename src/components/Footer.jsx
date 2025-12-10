@@ -10,187 +10,253 @@ import { FiMapPin, FiMail, FiPhone } from "react-icons/fi";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#070D1A] text-white pt-24 pb-10 overflow-hidden">
+    <footer className="relative bg-[#050814] text-white pt-24 pb-10 overflow-hidden">
+      {/* Top gradient line */}
+      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#00a3c4] via-[#006699] to-[#8b5cf6]" />
 
-      {/* 🔵 Animated Background Graphics */}
-      <motion.div
-        className="absolute -top-20 left-0 w-96 h-96 bg-blue-700/20 blur-[150px] rounded-full"
-        animate={{ opacity: [0.3, 0.55, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
+      {/* Soft background grid + glow */}
+      <div className="pointer-events-none absolute inset-0 opacity-30">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,150,255,0.22),transparent_55%),radial-gradient(circle_at_bottom,_rgba(76,0,255,0.22),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(transparent_0,rgba(148,163,184,0.1)_1px,transparent_1px),linear-gradient(90deg,transparent_0,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[length:100%_46px,52px_100%] opacity-25" />
+      </div>
 
-      <motion.div
-        className="absolute -bottom-20 right-0 w-[420px] h-[420px] bg-purple-600/20 blur-[150px] rounded-full"
-        animate={{ opacity: [0.2, 0.45, 0.2] }}
-        transition={{ duration: 9, repeat: Infinity }}
-      />
+      {/* ================== TOP STRIP: CTA ================== */}
+      <div className="relative container mx-auto px-6 z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="rounded-3xl bg-gradient-to-r from-[#020617] via-[#020817] to-[#020617] border border-[#1e293b] shadow-[0_22px_60px_rgba(15,23,42,0.8)] px-6 py-6 md:px-10 md:py-8 -mt-10 mb-14 flex flex-col md:flex-row items-start md:items-center gap-6"
+        >
+          <div className="flex-1 space-y-1">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-300">
+              Ready to see Ametecs in action?
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold">
+              Book a 30-minute strategy call with our product team.
+            </h2>
+            <p className="text-sm md:text-[15px] text-slate-300 max-w-xl">
+              Walk through SmartDCM, LeadGER and Telozar on a live session with
+              our specialists. No slides, only real flows and dashboards.
+            </p>
+          </div>
 
-      {/* ---------- APPOINTMENT SECTION (MIXED WITH FOOTER) ---------- */}
-      <div className="container mx-auto px-6 mb-20 relative z-20">
-        <h2 className="text-center text-4xl font-bold mb-3">
-          Visit us for appointment
-        </h2>
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <motion.a
+              whileHover={{ scale: 1.04, y: -1 }}
+              className="flex-1 md:flex-none px-6 py-3 rounded-xl bg-sky-500 text-slate-950 font-semibold text-sm shadow-lg shadow-sky-500/30 text-center cursor-pointer"
+              href="#contact"
+            >
+              Book a Demo
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.04, y: -1 }}
+              className="flex-1 md:flex-none px-6 py-3 rounded-xl border border-sky-400/70 text-sky-100 font-semibold text-sm text-center cursor-pointer bg-sky-500/5"
+              href="https://wa.me/919123456789"
+              target="_blank"
+              rel="noreferrer"
+            >
+              WhatsApp Our Team
+            </motion.a>
+          </div>
+        </motion.div>
+      </div>
 
-        <p className="text-center text-gray-300 max-w-xl mx-auto mb-12">
-          Need CRM, Telecalling, AI Insights or SmartDCM setup?  
-          Connect with our Ametecs India team anytime.
-        </p>
-
-        {/* CONTACT CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-          {/* India Address */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-xl"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 flex items-center justify-center text-2xl bg-blue-600/20 text-blue-300 border border-blue-500/40 rounded-full">
-                <FiMapPin />
+      {/* ================== MAIN FOOTER GRID ================== */}
+      <div className="relative container mx-auto px-6 z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr,1.2fr,1.1fr] gap-12 lg:gap-10">
+          {/* COLUMN 1: Brand + mini stats */}
+          <div className="space-y-6">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-sky-500/40 bg-sky-500/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-sky-200">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Ametecs · India
               </div>
-              <div>
-                <h3 className="text-lg font-bold">Hyderabad, India</h3>
-                <p className="text-blue-300 text-sm">
-                  PSR Prime Towers, DLF Cyber City,  
-                  <br /> Gachibowli – 500032
+              <h3 className="mt-4 text-2xl font-bold">A connected ops & CX stack.</h3>
+              <p className="mt-3 text-sm text-slate-300 max-w-sm">
+                SaaS platforms, cloud telephony and CRM automation for teams
+                that run high-volume floors and need predictable outcomes.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3 text-center text-xs">
+              <div className="rounded-2xl bg-slate-900/80 border border-sky-500/20 px-3 py-3">
+                <p className="uppercase tracking-[0.16em] text-slate-400">
+                  Platforms
+                </p>
+                <p className="mt-1 text-lg font-semibold text-sky-300">3+</p>
+              </div>
+              <div className="rounded-2xl bg-slate-900/80 border border-emerald-500/20 px-3 py-3">
+                <p className="uppercase tracking-[0.16em] text-slate-400">
+                  Teams
+                </p>
+                <p className="mt-1 text-lg font-semibold text-emerald-300">
+                  50+
+                </p>
+              </div>
+              <div className="rounded-2xl bg-slate-900/80 border border-indigo-500/20 px-3 py-3">
+                <p className="uppercase tracking-[0.16em] text-slate-400">
+                  Uptime
+                </p>
+                <p className="mt-1 text-lg font-semibold text-indigo-300">
+                  99.9%
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Email */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-xl"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 flex items-center justify-center text-2xl bg-blue-600/20 text-blue-300 border border-blue-500/40 rounded-full">
-                <FiMail />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold">support@ametecs.com</h3>
-                <p className="text-blue-300 text-sm">Email Us</p>
+          {/* COLUMN 2: Links (grouped differently) */}
+          <div className="grid grid-cols-2 gap-8 text-sm">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">
+                Products
+              </p>
+              <ul className="space-y-2 text-slate-200">
+                <li className="hover:text-sky-300 cursor-pointer">SmartDCM</li>
+                <li className="hover:text-sky-300 cursor-pointer">LeadGER</li>
+                <li className="hover:text-sky-300 cursor-pointer">Telozar</li>
+                <li className="hover:text-sky-300 cursor-pointer">SmartPayroll</li>
+              </ul>
+
+              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">
+                Solutions
+              </p>
+              <ul className="space-y-2 text-slate-200">
+                <li className="hover:text-sky-300 cursor-pointer">
+                  Collections & Recoveries
+                </li>
+                <li className="hover:text-sky-300 cursor-pointer">
+                  Tele-sales & CX floors
+                </li>
+                <li className="hover:text-sky-300 cursor-pointer">
+                  Remote BPO teams
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">
+                Company
+              </p>
+              <ul className="space-y-2 text-slate-200">
+                <li className="hover:text-sky-300 cursor-pointer">About Ametecs</li>
+                <li className="hover:text-sky-300 cursor-pointer">Careers</li>
+                <li className="hover:text-sky-300 cursor-pointer">Partner with us</li>
+                <li className="hover:text-sky-300 cursor-pointer">Support</li>
+              </ul>
+
+              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">
+                Resources
+              </p>
+              <ul className="space-y-2 text-slate-200">
+                <li className="hover:text-sky-300 cursor-pointer">Case studies</li>
+                <li className="hover:text-sky-300 cursor-pointer">Product updates</li>
+                <li className="hover:text-sky-300 cursor-pointer">API docs</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* COLUMN 3: Contact + Social in tiles */}
+          <div className="space-y-6">
+            {/* Contact card */}
+            <div className="rounded-2xl bg-slate-900/80 border border-sky-500/20 px-5 py-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">
+                Contact
+              </p>
+
+              <div className="space-y-3 text-sm">
+                <div className="flex gap-3">
+                  <span className="mt-0.5 text-sky-300">
+                    <FiMapPin />
+                  </span>
+                  <div>
+                    <p className="font-semibold text-slate-100">
+                      Hyderabad, India
+                    </p>
+                    <p className="text-slate-400 text-xs">
+                      PSR Prime Towers, Gachibowli · 500032
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3">
+                  <span className="mt-0.5 text-sky-300">
+                    <FiMail />
+                  </span>
+                  <div>
+                    <p className="font-semibold text-slate-100">
+                      support@ametecs.com
+                    </p>
+                    <p className="text-slate-400 text-xs">
+                      Sales & implementation queries
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3">
+                  <span className="mt-0.5 text-sky-300">
+                    <FiPhone />
+                  </span>
+                  <div>
+                    <p className="font-semibold text-slate-100">
+                      +91 91234 56789
+                    </p>
+                    <p className="text-slate-400 text-xs">
+                      Mon–Fri · 9:00–18:00 IST
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-          </motion.div>
 
-          {/* Phone */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-xl"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 flex items-center justify-center text-2xl bg-blue-600/20 text-blue-300 border border-blue-500/40 rounded-full">
-                <FiPhone />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold">+91 91234 56789</h3>
-                <p className="text-blue-300 text-sm">Phone Number</p>
+            {/* Social row – pill buttons */}
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">
+                Stay in the loop
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { icon: <FaLinkedin />, label: "LinkedIn" },
+                  { icon: <FaInstagram />, label: "Instagram" },
+                  { icon: <FaYoutube />, label: "YouTube" },
+                  { icon: <FaXTwitter />, label: "X" },
+                  { icon: <FaFacebookF />, label: "Facebook" },
+                ].map((item, i) => (
+                  <motion.a
+                    key={item.label}
+                    whileHover={{ y: -2, scale: 1.03 }}
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-900/70 px-3 py-1.5 text-xs text-slate-100 cursor-pointer"
+                  >
+                    <span className="text-sky-300">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </motion.a>
+                ))}
               </div>
             </div>
-          </motion.div>
-
+          </div>
         </div>
       </div>
 
-      {/* ---------- SOCIAL SECTION ---------- */}
-      <div className="container mx-auto px-6 z-20 relative">
-        <h3 className="text-sm tracking-widest text-gray-400">SOCIAL</h3>
-        <h2 className="text-3xl font-bold mt-1 mb-10">
-          Follow us for the latest updates
-        </h2>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-          {[
-            { icon: <FaFacebookF size={26} />, name: "FACEBOOK" },
-            { icon: <FaXTwitter size={26} />, name: "X" },
-            { icon: <FaYoutube size={26} />, name: "YOUTUBE" },
-            { icon: <FaInstagram size={26} />, name: "INSTAGRAM" },
-            { icon: <FaLinkedin size={26} />, name: "LINKEDIN" },
-          ].map((item, i) => (
-            <motion.div
-              whileHover={{ x: 6 }}
-              key={i}
-              className="flex items-center gap-3 cursor-pointer"
-            >
-              <div className="text-blue-400">{item.icon}</div>
-              <div>
-                <p className="text-xs text-gray-400">{item.name}</p>
-                <p className="text-sm font-medium">Ametecs</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* ---------- QUICK LINKS ---------- */}
-      <div className="container mx-auto px-6 mt-20 relative z-20">
-        <h2 className="text-3xl font-bold mb-6">Quick Links</h2>
-
-        <div className="grid md:grid-cols-4 gap-10 text-gray-300">
-          {/* 1 */}
-          <div className="space-y-3">
-            <div className="border-l-4 border-blue-500 pl-3 font-semibold text-white">
-              Services
-            </div>
-            <p>SmartDCM</p>
-            <p>LeadGER</p>
-            <p>Telozar</p>
-            <p>SmartPayroll</p>
+      {/* ================== FOOTER BOTTOM ================== */}
+      <div className="mt-12 border-t border-slate-800/80 pt-5 px-6">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] md:text-xs text-slate-400">
+          <div className="flex flex-wrap items-center gap-3">
+            <span>© {new Date().getFullYear()} Ametecs India Private Limited</span>
+            <span className="hidden md:inline-block text-slate-600">•</span>
+            <button className="hover:text-slate-200">Privacy Policy</button>
+            <span className="text-slate-600">|</span>
+            <button className="hover:text-slate-200">Terms</button>
+            <span className="text-slate-600">|</span>
+            <button className="hover:text-slate-200">SLA & Refunds</button>
           </div>
 
-          {/* 2 */}
-          <div className="space-y-3">
-            <div className="border-l-4 border-blue-500 pl-3 font-semibold text-white">
-              Solutions
-            </div>
-            <p>AI Speech Solutions</p>
-            <p>Cloud Telephony</p>
-            <p>CRM Development</p>
-            <p>Custom Integrations</p>
-          </div>
-
-          {/* 3 */}
-          <div className="space-y-3">
-            <div className="border-l-4 border-blue-500 pl-3 font-semibold text-white">
-              Company
-            </div>
-            <p>About Us</p>
-            <p>Careers</p>
-            <p>Support</p>
-            <p>Contact Us</p>
-          </div>
-
-          {/* 4 */}
-          <div className="space-y-3">
-            <div className="border-l-4 border-blue-500 pl-3 font-semibold text-white">
-              Resources
-            </div>
-            <p>Blogs</p>
-            <p>Case Studies</p>
-            <p>Pricing</p>
-            <p>Documentation</p>
+          <div className="flex items-center gap-2 text-slate-500">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Platform status: All systems operational</span>
           </div>
         </div>
       </div>
-
-      {/* ---------- FOOTER BOTTOM ---------- */}
-      <div className="border-t border-gray-700 mt-16 pt-6 text-center text-gray-400 text-sm">
-        <div className="flex justify-center gap-5 flex-wrap mb-3">
-          <a href="#" className="hover:text-white">Privacy Policy</a>
-          <span>|</span>
-          <a href="#" className="hover:text-white">Terms & Conditions</a>
-          <span>|</span>
-          <a href="#" className="hover:text-white">Refund Policy</a>
-          <span>|</span>
-          <a href="#" className="hover:text-white">Sitemap</a>
-        </div>
-
-        <p className="text-gray-500">
-          © {new Date().getFullYear()} Ametecs India Private Limited – All rights reserved.
-        </p>
-      </div>
-
     </footer>
   );
 }
