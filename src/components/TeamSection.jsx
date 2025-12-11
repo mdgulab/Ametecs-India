@@ -16,13 +16,13 @@ export default function TeamSection() {
 
   const members = [
     {
-      img: "src/assets/profile.jpg",
+      img: "./profile.jpg",
       name: "Ravi Teja",
       role: "Engineering Lead",
       linkedin: "#",
     },
     {
-      img: "src/assets/profile4.jpg",
+      img: "./profile4.jpg",
       name: "Lakshmi",
       role: "Delivery & Ops",
       linkedin: "#",
@@ -34,13 +34,13 @@ export default function TeamSection() {
       linkedin: "#",
     },
     {
-      img: "src/assets/profile2.jpg",
+      img: "./profile2.jpg",
       name: "Suresh",
       role: "Cloud & Infra",
       linkedin: "#",
     },
     {
-      img: "src/assets/profile1.jpg",
+      img: "./profile1.jpg",
       name: "Naresh",
       role: "Implementation",
       linkedin: "#",
