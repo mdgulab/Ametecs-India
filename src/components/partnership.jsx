@@ -29,11 +29,11 @@ export default function PartnershipSection() {
 
   // partner logos — replace with real logos in /assets
   const partners = [
-    "/assets/465e0e84-ec35-4eea-b4f8-cebc7879b18a.png",
-    "/assets/b2a0e410-950a-4ab4-94f6-184617c4b9ab.png",
-    "/assets/23d30945-2392-4595-8894-a60ac39c2843.png",
-    "/assets/881d92f1-7d2b-4f58-be1f-737a8cc95d76.png",
-    "/assets/17db0c3a-34ab-4d44-84a7-550513559236.png",
+    "src/assets/demo logo/logo1.jpg",
+    "src/assets/demo logo/logo2.jpg",
+    "src/assets/demo logo/logo3.jpg",
+    "src/assets/demo logo/logo4.jpg",
+    "src/assets/demo logo/logo3.jpg",
   ];
 
   // small auto-scroll for marquee
@@ -89,7 +89,7 @@ export default function PartnershipSection() {
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3760]">
                   Partner with Ametecs — <span className="text-[#006699]">Grow Together</span>
                 </h2>
-                <p className="mt-3 text-base text-gray-700 max-w-2xl">
+                <p className="mt-3 text-base md:text-lg text-[#475569] max-w-2xl">
                   We collaborate with resellers, integrators and strategic partners to deliver CRM, telephony and AI-powered automation.
                   Join our partner program to access leads, training, marketing support and generous margins.
                 </p>
@@ -101,51 +101,51 @@ export default function PartnershipSection() {
               <motion.div whileHover={{ y: -6 }} transition={{ type: 'spring', stiffness: 120 }} className="p-6 bg-white rounded-2xl shadow border border-[#eef4fb] flex gap-4 items-start">
                 <div className="w-12 h-12 rounded-lg bg-[#006699]/10 text-[#006699] grid place-items-center"><FiBriefcase size={20} /></div>
                 <div>
-                  <div className="font-semibold text-[#0B3760]">Market ready assets</div>
-                  <div className="text-sm text-gray-600">Sales kits, landing pages and co-branded collateral.</div>
+                  <div className="font-semibold text-[#0B3760] text-lg">Market ready assets</div>
+                  <div className="text-sm text-[#475569] mt-1">Sales kits, landing pages and co-branded collateral.</div>
                 </div>
               </motion.div>
 
               <motion.div whileHover={{ y: -6 }} transition={{ type: 'spring', stiffness: 120, delay: 0.03 }} className="p-6 bg-white rounded-2xl shadow border border-[#eef4fb] flex gap-4 items-start">
                 <div className="w-12 h-12 rounded-lg bg-[#00a3c4]/10 text-[#00a3c4] grid place-items-center"><FiStar size={20} /></div>
                 <div>
-                  <div className="font-semibold text-[#0B3760]">Priority support</div>
-                  <div className="text-sm text-gray-600">Dedicated partner desk and technical onboarding.</div>
+                  <div className="font-semibold text-[#0B3760] text-lg">Priority support</div>
+                  <div className="text-sm text-[#475569] mt-1">Dedicated partner desk and technical onboarding.</div>
                 </div>
               </motion.div>
 
               <motion.div whileHover={{ y: -6 }} transition={{ type: 'spring', stiffness: 120, delay: 0.06 }} className="p-6 bg-white rounded-2xl shadow border border-[#eef4fb] flex gap-4 items-start">
                 <div className="w-12 h-12 rounded-lg bg-[#005580]/10 text-[#005580] grid place-items-center"><FiShield size={20} /></div>
                 <div>
-                  <div className="font-semibold text-[#0B3760]">Comprehensive training</div>
-                  <div className="text-sm text-gray-600">Enablement sessions, videos and sandbox environments.</div>
+                  <div className="font-semibold text-[#0B3760] text-lg">Comprehensive training</div>
+                  <div className="text-sm text-[#475569] mt-1">Enablement sessions, videos and sandbox environments.</div>
                 </div>
               </motion.div>
 
               <motion.div whileHover={{ y: -6 }} transition={{ type: 'spring', stiffness: 120, delay: 0.09 }} className="p-6 bg-white rounded-2xl shadow border border-[#eef4fb] flex gap-4 items-start">
                 <div className="w-12 h-12 rounded-lg bg-[#006699]/10 text-[#006699] grid place-items-center"><FiUsers size={20} /></div>
                 <div>
-                  <div className="font-semibold text-[#0B3760]">Partner success program</div>
-                  <div className="text-sm text-gray-600">Joint planning, quarterly reviews and incentive tiers.</div>
+                  <div className="font-semibold text-[#0B3760] text-lg">Partner success program</div>
+                  <div className="text-sm text-[#475569] mt-1">Joint planning, quarterly reviews and incentive tiers.</div>
                 </div>
               </motion.div>
             </motion.div>
 
             {/* Tiers graphic */}
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.12 }} className="mt-10 bg-white p-6 rounded-2xl border border-[#eef4fb] shadow-sm">
-              <h4 className="font-semibold text-[#0B3760]">Partner Tiers</h4>
+              <h4 className="font-semibold text-[#0B3760] text-lg">Partner Tiers</h4>
               <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="p-4 rounded-xl bg-[#fbfdff] border border-[#eef6ff] text-center">
                   <div className="font-bold text-[#0B3760]">Reseller</div>
-                  <div className="text-xs text-gray-500 mt-2">Fast onboarding, sales enablement and starter margins.</div>
+                  <div className="text-xs text-[#6b7280] mt-2">Fast onboarding, sales enablement and starter margins.</div>
                 </div>
                 <div className="p-4 rounded-xl bg-[#fbfdff] border border-[#eef6ff] text-center">
                   <div className="font-bold text-[#0B3760]">Integrator</div>
-                  <div className="text-xs text-gray-500 mt-2">API access, implementation guides and integration support.</div>
+                  <div className="text-xs text-[#6b7280] mt-2">API access, implementation guides and integration support.</div>
                 </div>
                 <div className="p-4 rounded-xl bg-[#fbfdff] border border-[#eef6ff] text-center">
                   <div className="font-bold text-[#0B3760]">Strategic</div>
-                  <div className="text-xs text-gray-500 mt-2">Tailored GTM, co-selling and priority allocation.</div>
+                  <div className="text-xs text-[#6b7280] mt-2">Tailored GTM, co-selling and priority allocation.</div>
                 </div>
               </div>
             </motion.div>
@@ -158,20 +158,53 @@ export default function PartnershipSection() {
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-lg bg-[#006699]/10 grid place-items-center text-[#006699]"><FiMail size={22} /></div>
                 <div>
-                  <div className="font-semibold text-[#0B3760]">Partner Inquiries</div>
-                  <div className="text-sm text-gray-600">Apply quickly — we'll follow up within 1 business day.</div>
+                  <div className="font-semibold text-[#0B3760] text-lg">Partner Inquiries</div>
+                  <div className="text-sm text-[#475569] mt-1">Apply quickly — we'll follow up within 1 business day.</div>
                 </div>
               </div>
 
               <div className="mt-4">
                 <form onSubmit={submitPartner} className="space-y-3">
-                  <input name="name" value={form.name} onChange={handleChange} placeholder="Full name" required className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#006699]/40" />
-                  <input name="company" value={form.company} onChange={handleChange} placeholder="Company" required className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#006699]/40" />
-                  <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="Email" required className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#006699]/40" />
+                  <input
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="Full name"
+                    required
+                    className="w-full rounded-lg border border-[#e6eef8] px-3 py-2 text-sm text-[#0B3760] outline-none focus:ring-2 focus:ring-[#006699]/30"
+                  />
+                  <input
+                    name="company"
+                    value={form.company}
+                    onChange={handleChange}
+                    placeholder="Company"
+                    required
+                    className="w-full rounded-lg border border-[#e6eef8] px-3 py-2 text-sm text-[#0B3760] outline-none focus:ring-2 focus:ring-[#006699]/30"
+                  />
+                  <input
+                    name="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    required
+                    className="w-full rounded-lg border border-[#e6eef8] px-3 py-2 text-sm text-[#0B3760] outline-none focus:ring-2 focus:ring-[#006699]/30"
+                  />
 
                   <div className="grid grid-cols-2 gap-3">
-                    <input name="phone" value={form.phone} onChange={handleChange} placeholder="Phone" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#006699]/40" />
-                    <select name="type" value={form.type} onChange={handleChange} className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#006699]/40">
+                    <input
+                      name="phone"
+                      value={form.phone}
+                      onChange={handleChange}
+                      placeholder="Phone"
+                      className="w-full rounded-lg border border-[#e6eef8] px-3 py-2 text-sm text-[#0B3760] outline-none focus:ring-2 focus:ring-[#006699]/30"
+                    />
+                    <select
+                      name="type"
+                      value={form.type}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border border-[#e6eef8] px-3 py-2 text-sm text-[#0B3760] outline-none focus:ring-2 focus:ring-[#006699]/30"
+                    >
                       <option>Reseller</option>
                       <option>Integrator</option>
                       <option>Strategic</option>
@@ -179,10 +212,20 @@ export default function PartnershipSection() {
                   </div>
 
                   <div className="mt-3 flex items-center gap-3">
-                    <button type="submit" className={`flex-1 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-semibold shadow-sm ${sent ? 'bg-green-100 text-green-800' : 'bg-[#006699] text-white'}`}>
-                      {sent ? 'Sent ✓' : 'Apply'}
+                    <button
+                      type="submit"
+                      className={`flex-1 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-semibold shadow-sm transition-colors ${
+                        sent ? "bg-emerald-50 text-emerald-800 border border-emerald-100" : "bg-[#006699] text-white"
+                      }`}
+                    >
+                      {sent ? "Sent ✓" : "Apply"}
                     </button>
-                    <button type="button" onClick={() => openWhatsApp(`Hi, I'm ${form.name || 'interested in partnership'}. Please contact me.`)} className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 text-sm text-[#0B3760]">
+
+                    <button
+                      type="button"
+                      onClick={() => openWhatsApp(`Hi, I'm ${form.name || "interested in partnership"}. Please contact me.`)}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#e6eef8] text-sm text-[#0B3760] bg-white/95 hover:bg-white"
+                    >
                       Message on WhatsApp
                     </button>
                   </div>
@@ -192,7 +235,7 @@ export default function PartnershipSection() {
 
             {/* PARTNER LOGOS — rich graphic strip with animated marquee */}
             <motion.div className="bg-white rounded-2xl p-4 shadow border border-[#eef4fb]">
-              <h5 className="font-semibold mb-3 text-[#0B3760]">Trusted by</h5>
+              <h5 className="font-semibold mb-3 text-[#0B3760] text-base">Trusted by</h5>
 
               <div className="overflow-hidden">
                 <div className="flex gap-6 items-center" style={{ alignItems: 'center' }}>
@@ -211,17 +254,19 @@ export default function PartnershipSection() {
             {/* QUICK STATS and CTA */}
             <motion.div className="grid grid-cols-2 gap-3">
               <div className="p-4 rounded-xl bg-white shadow border border-[#eef4fb] text-center">
-                <div className="text-2xl font-bold text-[#006699]">1500+</div>
-                <div className="text-xs text-gray-500">Clients</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#006699]">1500+</div>
+                <div className="text-xs text-[#6b7280] mt-1">Clients</div>
               </div>
               <div className="p-4 rounded-xl bg-white shadow border border-[#eef4fb] text-center">
-                <div className="text-2xl font-bold text-[#006699]">17+</div>
-                <div className="text-xs text-gray-500">Years</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#006699]">17+</div>
+                <div className="text-xs text-[#6b7280] mt-1">Years</div>
               </div>
             </motion.div>
 
             <motion.div className="mt-4">
-              <a href="/contact?type=partner" className="w-full inline-flex items-center justify-center py-3 rounded-lg bg-[#006699] text-white font-semibold">Apply now</a>
+              <a href="/contact?type=partner" className="w-full inline-flex items-center justify-center py-3 rounded-lg bg-[#006699] text-white font-semibold text-sm">
+                Apply now
+              </a>
             </motion.div>
           </motion.aside>
         </div>
@@ -231,6 +276,10 @@ export default function PartnershipSection() {
       <style>{`
         /* ensure marquee has no text selection and smooth display */
         .no-select { user-select: none; -webkit-user-select: none; -ms-user-select: none; }
+        @media (max-width: 640px) {
+          /* slightly smaller hero heading on very small screens */
+          #partnership h2 { font-size: 1.5rem; }
+        }
       `}</style>
     </section>
   );

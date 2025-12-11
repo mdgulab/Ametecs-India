@@ -8,7 +8,7 @@ const testimonials = [
     company: "Leading NBFC",
     text:
       "Ametecs helped us streamline our complete collection workflow. SmartDCM boosted efficiency by 40% and removed all manual reporting.",
-    logo: "/logos/nbfc.png",
+    logo: "src/assets/demo logo/logo1.jpg",
   },
   {
     name: "Srinivas Rao",
@@ -16,7 +16,7 @@ const testimonials = [
     company: "BPO & Telecalling Firm",
     text:
       "LeadGER enabled us to scale from 15 to 120 agents with ease. AI analytics and SmartPing telephony transformed our operations.",
-    logo: "/logos/bpo.png",
+    logo: "src/assets/demo logo/logo2.jpg",
   },
   {
     name: "Priya Varma",
@@ -24,7 +24,7 @@ const testimonials = [
     company: "Staffing & HR Solutions",
     text:
       "Telozar made remote operations seamless. Monitoring, attendance and performance visibility improved drastically.",
-    logo: "/logos/hr.png",
+    logo: "src/assets/demo logo/logo3.jpg",
   },
   {
     name: "Arjun Patel",
@@ -32,7 +32,7 @@ const testimonials = [
     company: "Real Estate Group",
     text:
       "Ametecs automation and CRM workflows helped improve customer engagement and lead conversions significantly.",
-    logo: "/logos/realestate.png",
+    logo: "src/assets/demo logo/logo4.jpg",
   },
 ];
 

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function TeamSection() {
   const mainMember = {
-    img: "/team/main.jpg",
+    img: "src/assets/profile3.jpg",
     name: "Bharath",
     role: "Product Lead",
     desc: "Guiding Ametecs with 10+ years of experience across CRM, SmartDCM, cloud telephony and enterprise automation.",
@@ -16,13 +16,13 @@ export default function TeamSection() {
 
   const members = [
     {
-      img: "/team/t1.jpg",
+      img: "src/assets/profile.jpg",
       name: "Ravi Teja",
       role: "Engineering Lead",
       linkedin: "#",
     },
     {
-      img: "/team/t2.jpg",
+      img: "src/assets/profile4.jpg",
       name: "Lakshmi",
       role: "Delivery & Ops",
       linkedin: "#",
@@ -34,13 +34,13 @@ export default function TeamSection() {
       linkedin: "#",
     },
     {
-      img: "/team/t4.jpg",
+      img: "src/assets/profile2.jpg",
       name: "Suresh",
       role: "Cloud & Infra",
       linkedin: "#",
     },
     {
-      img: "/team/t5.jpg",
+      img: "src/assets/profile1.jpg",
       name: "Naresh",
       role: "Implementation",
       linkedin: "#",
