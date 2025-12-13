@@ -29,11 +29,11 @@ export default function PartnershipSection() {
 
   // partner logos — replace with real logos in /assets
   const partners = [
-    "src/assets/demo logo/logo1.jpg",
-    "src/assets/demo logo/logo2.jpg",
-    "src/assets/demo logo/logo3.jpg",
-    "src/assets/demo logo/logo4.jpg",
-    "src/assets/demo logo/logo3.jpg",
+    "./demo logo/logo1.jpg",
+    "./demo logo/logo2.jpg",
+    "./demo logo/logo3.jpg",
+    "./demo logo/logo4.jpg",
+    "./demo logo/logo3.jpg",
   ];
 
   // small auto-scroll for marquee

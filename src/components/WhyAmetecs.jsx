@@ -1,230 +1,192 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaPuzzlePiece,
   FaTools,
   FaHandshake,
   FaRocket,
   FaShieldAlt,
-  FaStar,
 } from "react-icons/fa";
 
+const PRIMARY = "#006699";
+
 export default function WhyAmetecs() {
+  const [openIndex, setOpenIndex] = useState(null);
+
   const items = [
     {
-      icon: <FaPuzzlePiece className="text-white text-2xl" />,
+      icon: <FaPuzzlePiece className="text-white text-xl" />,
       color: "from-[#006699] to-[#00A3C4]",
-      title: "One Ecosystem, Multiple Solutions",
-      desc: "SmartDCM, LeadGER, Telozar — all connected with improved scalability, optimized UI and faster performance.",
+      title: "Planning & Strategy",
+      short:
+        "Clear goals, market research and strategic alignment before execution.",
+      full:
+        "From the initial idea to final delivery, our planning phase defines business goals, brand positioning, target audience and success metrics. We perform deep competitor and market analysis to identify opportunities and create a roadmap that ensures long-term growth.",
+      gif: "/Planning.gif",
     },
     {
-      icon: <FaTools className="text-white text-2xl" />,
-      color: "from-emerald-500 to-green-600",
-      title: "Custom-Built, Never One-Size-Fits-All",
-      desc: "Now with smoother animations, refined UI elements and modular feature blocks.",
+      icon: <FaTools className="text-white text-xl" />,
+      color: "from-[#006699] to-[#008bb5]",
+      title: "Design & User Experience",
+      short:
+        "User-centric design focused on clarity, usability and brand identity.",
+      full:
+        "Our design process covers UX research, UI design, wireframing, visual storytelling and content structuring. Every interface is crafted to improve engagement, reduce friction and strengthen your brand presence.",
+      gif: "/Design.gif",
     },
     {
-      icon: <FaHandshake className="text-white text-2xl" />,
-      color: "from-amber-500 to-yellow-600",
-      title: "Long-Term Support, Not Just Deployment",
-      desc: "Enhanced with a cleaner layout and better readability across all screen sizes.",
+      icon: <FaHandshake className="text-white text-xl" />,
+      color: "from-[#006699] to-[#00a0cc]",
+      title: "Development & Engineering",
+      short:
+        "Robust, scalable and performance-driven development execution.",
+      full:
+        "We build secure, scalable solutions using clean architecture and modern technologies across web, mobile and enterprise platforms.",
+      gif: "/Development.gif",
     },
     {
-      icon: <FaRocket className="text-white text-2xl" />,
-      color: "from-rose-500 to-red-600",
-      title: "Growth-Focused, Client-Led Innovation",
-      desc: "Boosted motion effects and unified design language for a premium experience.",
+      icon: <FaShieldAlt className="text-white text-xl" />,
+      color: "from-[#006699] to-[#0094bf]",
+      title: "Testing & Quality Assurance",
+      short:
+        "Rigorous testing to ensure stability, security and performance.",
+      full:
+        "Each solution undergoes functional testing, performance optimization and security audits to guarantee reliability.",
+      gif: "/Testing2.gif",
     },
     {
-      icon: <FaShieldAlt className="text-white text-2xl" />,
-      color: "from-cyan-600 to-sky-500",
-      title: "Ethical, Secure & Fully Compliant",
-      desc: "Sharper visuals and responsive spacing for better structure.",
-    },
-    {
-      icon: <FaStar className="text-white text-2xl" />,
-      color: "from-green-500 to-emerald-600",
-      title: "Proven Expertise Across Domains",
-      desc: "Polished typography and enhanced color balance for stronger presentation.",
+      icon: <FaRocket className="text-white text-xl" />,
+      color: "from-[#006699] to-[#00b0db]",
+      title: "Launch & Growth Optimization",
+      short:
+        "Strategic deployment with analytics and growth tracking.",
+      full:
+        "Post-launch optimization ensures continuous performance improvements, adoption growth and measurable business impact.",
+      gif: "/Launch.gif",
     },
   ];
 
   return (
-    <section className="relative w-full py-24 md:py-28 bg-[#f3f8fc] text-gray-900 overflow-hidden">
-      {/* Background gradient / orbs (subtle) */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f3f8fc] to-[#eaf6ff]" />
-        <motion.div
-          className="absolute -left-32 top-0 w-[360px] h-[360px] bg-[#006699]/10 blur-[110px] rounded-full"
-          animate={{ opacity: [0.16, 0.5, 0.16], y: [0, 16, 0] }}
-          transition={{ duration: 10, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute -right-20 bottom-0 w-[320px] h-[320px] bg-[#00A3C4]/10 blur-[110px] rounded-full"
-          animate={{ opacity: [0.14, 0.5, 0.14], y: [0, -16, 0] }}
-          transition={{ duration: 11, repeat: Infinity }}
-        />
-      </div>
+    <section className="relative w-full py-24 bg-[#f2f8fb] overflow-hidden">
+      <div className="container mx-auto px-10 relative">
 
-      {/* Content wrapper */}
-      <div className="relative container mx-auto px-4 md:px-6">
         {/* Heading */}
-        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: -6 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#d6eafe] bg-white/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#006699]"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Why Ametecs
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.06 }}
-            className="mt-4 text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-[#0B3760]"
-          >
-            A connected{" "}
-            <span className="bg-gradient-to-r from-[#006699] via-[#00A3C4] to-[#0B3760] bg-clip-text text-transparent">
-              communication & ops stack
-            </span>{" "}
-            built for scale.
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.14 }}
-            className="mt-3 text-sm md:text-base text-gray-700 max-w-2xl mx-auto"
-          >
-            From collections to tele-sales and remote BPO control rooms, Ametecs
-            gives you one ecosystem instead of scattered tools and manual hacks.
-          </motion.p>
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <p className="text-xs font-semibold tracking-widest text-[#006699] uppercase mb-3">
+            Our Process
+          </p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#083047]">
+            Our Proven Process for Digital Success
+          </h2>
+          <p className="mt-3 text-[#4b6b7a]">
+            A structured, scalable journey from idea to launch.
+          </p>
         </div>
 
-        {/* DESKTOP / LARGE — STEPPED JOURNEY TIMELINE */}
-        <div className="hidden lg:block">
-          <div className="relative max-w-6xl mx-auto">
-            {/* Center line */}
-            <div className="absolute left-0 right-0 top-1/2 h-[2px] -translate-y-1/2 bg-gradient-to-r from-[#cfe2ff] via-[#b9d8ff] to-[#e0f1ff]" />
+        {/* MODAL */}
+        <AnimatePresence>
+          {openIndex !== null && (
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white rounded-3xl shadow-2xl w-[680px] max-w-[92%] p-8 relative"
+              >
+                <button
+                  onClick={() => setOpenIndex(null)}
+                  className="absolute top-4 right-5 text-gray-500 hover:text-black"
+                >
+                  ✕
+                </button>
 
-            <div className="grid grid-cols-6 gap-6">
-              {items.map((item, index) => {
-                const isEven = index % 2 === 0;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: isEven ? 40 : -40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    transition={{ duration: 0.6, delay: index * 0.07 }}
-                    className={`relative flex flex-col items-center ${
-                      isEven ? "translate-y-[-35px]" : "translate-y-[35px]"
-                    }`}
-                  >
-                    {/* Top card (for even) */}
-                    {isEven && (
-                      <div className="mb-6 w-full">
-                        <div className="rounded-2xl bg-white/95 border border-[#e7f1ff] shadow-[0_10px_30px_rgba(11,55,96,0.08)] px-4 py-4 text-center">
-                          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#006699] mb-1">
-                            STEP {String(index + 1).padStart(2, "0")}
-                          </p>
-                          <h3 className="text-sm font-semibold text-[#0B3760] mb-1">
-                            {item.title}
-                          </h3>
-                          <p className="text-[12px] text-gray-700 leading-relaxed">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </div>
-                    )}
+                <div className="text-xs font-bold text-[#006699] mb-2">
+                  STEP {String(openIndex + 1).padStart(2, "0")}
+                </div>
 
-                    {/* Node + icon */}
-                    <div className="relative flex flex-col items-center">
-                      {/* small circle on main line */}
-                      <div className="h-3 w-3 rounded-full bg-white border border-[#b5d6ff] shadow-sm" />
-                      {/* gradient diamond */}
-                      <div className="mt-2 h-12 w-12 rotate-45 rounded-2xl bg-gradient-to-br shadow-md flex items-center justify-center">
-                        <div
-                          className={`h-11 w-11 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center -rotate-45`}
-                        >
-                          {item.icon}
-                        </div>
-                      </div>
+                <h3 className="text-xl font-bold text-[#083047] mb-4">
+                  {items[openIndex].title}
+                </h3>
+
+                <img
+                  src={items[openIndex].gif}
+                  alt=""
+                  className="w-full rounded-xl mb-4"
+                />
+
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {items[openIndex].full}
+                </p>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* ZIG-ZAG TIMELINE */}
+        <div className="hidden lg:block relative max-w-7xl mx-auto">
+          <div className="absolute left-0 right-0 top-1/2 h-[2px] bg-[#006699]/20" />
+
+          <div className="grid grid-cols-5 gap-14">
+            {items.map((item, index) => {
+              const isEven = index % 2 === 0;
+
+              return (
+                <div
+                  key={index}
+                  className={`flex flex-col items-center ${
+                    isEven ? "-translate-y-16" : "translate-y-16"
+                  }`}
+                >
+                  {/* CARD */}
+                  <div className="relative bg-white border border-[#e2eef4] rounded-2xl shadow-lg px-6 py-6 text-center w-[260px]">
+
+                    {/* STEP */}
+                    <div
+                      className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] font-bold px-3 py-1 rounded-full text-white shadow"
+                      style={{ background: PRIMARY }}
+                    >
+                      STEP {String(index + 1).padStart(2, "0")}
                     </div>
 
-                    {/* Bottom card (for odd) */}
-                    {!isEven && (
-                      <div className="mt-6 w-full">
-                        <div className="rounded-2xl bg-white/95 border border-[#e7f1ff] shadow-[0_10px_30px_rgba(11,55,96,0.08)] px-4 py-4 text-center">
-                          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#006699] mb-1">
-                            STEP {String(index + 1).padStart(2, "0")}
-                          </p>
-                          <h3 className="text-sm font-semibold text-[#0B3760] mb-1">
-                            {item.title}
-                          </h3>
-                          <p className="text-[12px] text-gray-700 leading-relaxed">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+                    <h3 className="text-sm font-semibold text-[#083047] mt-3 mb-2">
+                      {item.title}
+                    </h3>
 
-          {/* Bottom note strip */}
-          <div className="mt-12 max-w-3xl mx-auto rounded-2xl bg-white/95 border border-dashed border-[#dbe9ff] px-5 py-4 text-sm text-gray-700 shadow-sm text-center">
-            Each step builds on the previous one — from unifying tools to
-            customising workflows, supporting you long term and scaling safely
-            across industries.
-          </div>
-        </div>
+                    <p className="text-[13px] text-gray-700">
+                      {item.short}
+                    </p>
 
-        {/* MOBILE / TABLET — STACKED CARDS (same content) */}
-        <div className="lg:hidden mt-8 space-y-6">
-          {items.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="relative rounded-2xl bg-white/95 border border-[#e7f1ff] shadow-[0_10px_24px_rgba(11,55,96,0.06)] px-4 py-4 flex gap-4"
-            >
-              {/* Icon on left */}
-              <div className="flex-shrink-0 flex items-start pt-1">
-                <div
-                  className={`h-11 w-11 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-md`}
-                >
-                  {item.icon}
+                    <img
+                      src={item.gif}
+                      alt=""
+                      className="w-full rounded-lg my-4"
+                    />
+
+                    <button
+                      onClick={() => setOpenIndex(index)}
+                      className="text-xs font-semibold text-[#006699]"
+                    >
+                      Read More
+                    </button>
+                  </div>
+
+                  {/* ICON */}
+                  <div className="mt-5">
+                    <div
+                      className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-md`}
+                    >
+                      {item.icon}
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              {/* Text */}
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#006699] mb-1">
-                  STEP {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="text-sm md:text-base font-semibold text-[#0B3760] mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-[13px] md:text-[14px] text-gray-700 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-
-          <div className="mt-4 rounded-2xl bg-[#f7fbff] border border-dashed border-[#dbe9ff] px-4 py-3 text-[13px] text-gray-700 text-center">
-            One journey from “scattered tools” to “single connected Ametecs
-            stack” — tuned for high-volume ops floors.
+              );
+            })}
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        
         // Override Tailwind's "blue" scale so existing classes map to your new color.
         blue: {
           50:  '#e9f4f7',
@@ -21,6 +22,9 @@ module.exports = {
           800: '#004466',
           900: '#00334d',
         },
+     fontFamily: {
+  sans: ["Poppins", "sans-serif"],
+},
         // Optional: provide a named primary for direct use (bg-primary, text-primary)
         primary: {
           DEFAULT: '#006699',
@@ -31,3 +35,4 @@ module.exports = {
   },
   plugins: [],
 };
+

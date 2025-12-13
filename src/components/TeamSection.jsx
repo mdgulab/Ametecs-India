@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function TeamSection() {
   const mainMember = {
-    img: "src/assets/profile3.jpg",
+    img: "./profile3.jpg",
     name: "Bharath",
     role: "Product Lead",
     desc: "Guiding Ametecs with 10+ years of experience across CRM, SmartDCM, cloud telephony and enterprise automation.",

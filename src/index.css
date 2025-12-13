@@ -23,3 +23,6 @@
 .perspective-1000 {
   perspective: 1000px;
 }
+html {
+  font-family: 'Poppins', sans-serif !important;
+}
