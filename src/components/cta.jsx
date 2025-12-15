@@ -10,9 +10,9 @@ export default function StartProjectCTA() {
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#0b1f2a] leading-tight">
           Start Your{" "}
-          <span className="text-[#006699]">New Project</span>{" "}
+          <span className="text-[#0b1f2a]">New Project</span>{" "}
           With{" "}
-          <span className="text-[#0b1f2a]">APPIT</span>
+          <span className="text-[#006699]">Ametecs India</span>
         </h2>
 
         {/* Sub text */}

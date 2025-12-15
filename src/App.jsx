@@ -22,6 +22,7 @@ import TrustedSection from "./components/TrustedSection";
 import StartProjectCTA from "./components/cta";
 import ServicesSection from "./components/AllSercvices";
 import AboutAmetecs from "./components/Home_about";
+import FAQSection from "./components/FAQsection";
 
 
 // import WhyAmetecs from "./components/WhyAmetecs";
@@ -54,7 +55,9 @@ export default function App() {
               <TechnologiesSection /> */}
               <Testimonials />
               <TeamSection />
+               <FAQSection/>
                <StartProjectCTA/>  
+              
               
             </>
           }

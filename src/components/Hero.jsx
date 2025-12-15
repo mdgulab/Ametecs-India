@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 // -------------------------------------------------
 // CONFIG
 // -------------------------------------------------
-const PRIMARY = "#006699"; // your theme color
-const TEXT_DARK = "#0f1724"; // dark heading color
+const PRIMARY = "#27b7ffff"; // your theme color
+const TEXT_DARK = "#ffffffff"; // dark heading color
 const ILLUST_SRC = "/banner2s.jpg"; // <-- replace with your image path
 
 // -------------------------------------------------
@@ -35,7 +35,7 @@ function RotatingWords() {
   }, []);
 
   return (
-    <div className="relative h-[60px] mt-3 overflow-hidden">
+    <div className="relative h-[90px] mt-3 overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.span
           key={index}
@@ -43,7 +43,7 @@ function RotatingWords() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.45 }}
-          className="absolute left-0 top-0 block text-[40px] md:text-[44px] lg:text-[56px] font-extrabold leading-tight"
+          className="absolute left-0 top-0 block text-[40px] md:text-[40px] lg:text-[45px] font-extrabold leading-tight"
           style={{ color: PRIMARY }}
         >
           {words[index]}
@@ -62,7 +62,7 @@ export default function Hero() {
 <section
   className="relative overflow-hidden bg-cover bg-center bg-no-repeat font-[Poppins] pt-[200px] pb-[100px]"
   style={{
-    backgroundImage: "url('/banner.jpg')", // your bg
+    backgroundImage: "url('/banner.gif')", // your bg
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -71,7 +71,7 @@ export default function Hero() {
 
 >
   {/* Dark / blue overlay for readability */}
-  <div className="absolute inset-0 bg-[#006699]/5 backdrop-blur-[1px] -z-3"></div>
+  <div className="absolute inset-0 bg-[#006699]/30 backdrop-blur-[3px] -z-3"></div>
 
   {/* OPTIONAL: animated slight zoom effect */}
   <motion.div
@@ -100,14 +100,14 @@ export default function Hero() {
                   className="w-0.5 h-6"
                   style={{ background: PRIMARY, display: "inline-block", borderRadius: 2 }}
                 />
-                <div className="text-xs md:text-sm font-semibold text-[#134155]">
+                <div className="text-xs md:text-sm font-semibold text-[#ffffff]">
                   Digital Transformation Company
                 </div>
               </div>
 
               {/* main heading */}
               <h1
-                className="font-extrabold tracking-tight text-[38px] md:text-5xl lg:text-[56px] leading-tight"
+                className="font-extrabold tracking-tight text-[35px] md:text-5xl lg:text-[46px] leading-tight"
                 style={{ color: TEXT_DARK }}
               >
                 Your Partner to Grow Your <br /> Business Digitally with
@@ -119,7 +119,7 @@ export default function Hero() {
                 <a
                   href="#contact"
                   className="inline-block px-5 py-3 rounded-md text-white font-semibold shadow"
-                  style={{ background: PRIMARY, boxShadow: "0 8px 24px rgba(0, 167, 250, 0.23)" }}
+                  style={{ background: PRIMARY, boxShadow: "0 8px 24px rgba(255, 255, 255, 0.53)" }}
                 >
                   Let’s Discuss
                 </a>
@@ -132,7 +132,7 @@ export default function Hero() {
 
                 {/* Quality Services */}
                 <div className="flex items-center gap-3">
-                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-white/60 shadow-sm">
+                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-white/100 shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
                       <path d="M12 2L20 6v6c0 5-4 9-8 10-4-1-8-5-8-10V6l8-4z"
                         fill={PRIMARY} opacity="0.12" />
@@ -140,14 +140,14 @@ export default function Hero() {
                         stroke={PRIMARY} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <div className="text-sm font-medium">Quality Services</div>
+                  <div className="text-sm font-medium text-white/100">Quality Services</div>
                 </div>
 
                 <span className="text-slate-300">|</span>
 
                 {/* Customized Solutions */}
                 <div className="flex items-center gap-3">
-                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-white/60 shadow-sm">
+                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-white/100 shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
                       <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7z"
                         fill={PRIMARY} opacity="0.12" />
@@ -155,21 +155,21 @@ export default function Hero() {
                         stroke={PRIMARY} strokeWidth="0.8" opacity="0.95" />
                     </svg>
                   </span>
-                  <div className="text-sm font-medium">Customized Solutions</div>
+                  <div className="text-sm font-medium text-white/100">Customized Solutions</div>
                 </div>
 
                 <span className="text-slate-300">|</span>
 
                 {/* User-Centric Design */}
                 <div className="flex items-center gap-3">
-                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-white/60 shadow-sm">
+                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-white/100 shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
                       <circle cx="12" cy="8" r="3" fill={PRIMARY} opacity="0.12" />
                       <path d="M4 20c1.6-4 6-6 8-6s6.4 2 8 6"
                         stroke={PRIMARY} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <div className="text-sm font-medium">User-Centric Design</div>
+                  <div className="text-sm font-medium text-white/100">User-Centric Design</div>
                 </div>
 
               </div>
@@ -212,9 +212,12 @@ export default function Hero() {
                 style={{ minWidth: 120 }}
               >
                 <div className="w-8 h-8 bg-white rounded-sm flex items-center justify-center">
-                  <svg width="28" height="20"><rect width="28" height="20" rx="3" fill="#f6f6f6"/></svg>
+                  <svg width="28" height="18"><rect width="26" height="10" rx="3" fill="#006699"/></svg>
                 </div>
-                <div className="text-xs text-slate-700">FIFS Affiliate <br /> Member</div>
+                <div className="text-xs text-slate-700">
+  Smart <span className="text-[#006699]">DCM</span>
+</div>
+
               </motion.div>
 
               <motion.div
@@ -222,8 +225,10 @@ export default function Hero() {
                 animate={{ x: [ 6, -6, 6 ] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="text-xs font-semibold text-[#0b5080]">NEWS</div>
-                <div className="text-xs text-red-500 bg-white px-1 rounded">LIVE</div>
+                 <svg width="18" height="18"><rect width="10" height="10" rx="3" fill="#006699"/></svg>
+                <div className="text-xs text-slate-700">
+  Lead <span className="text-[#006699]">GER</span>
+</div>
               </motion.div>
 
               <motion.div
@@ -231,8 +236,8 @@ export default function Hero() {
                 animate={{ y: [6, -6, 6] }}
                 transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="w-6 h-6 bg-violet-600 rounded-full flex items-center justify-center text-white text-xs">पे</div>
-                <div className="text-xs text-slate-700">Our Payment Partner</div>
+                <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs"></div>
+                <div className="text-xs text-slate-700">SmartRMI</div>
               </motion.div>
 
               <motion.div
@@ -240,8 +245,8 @@ export default function Hero() {
                 animate={{ y: [6, -6, 6] }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="text-xs text-slate-700">Top Developers</div>
-                <div className="text-xs font-bold">Clutch</div>
+                <div className="text-xs text-slate-700">SmartPayroll</div>
+                <div className="text-xs font-bold"></div>
               </motion.div>
 
             </motion.div>

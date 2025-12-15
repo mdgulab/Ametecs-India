@@ -44,23 +44,23 @@ export default function TrustedSection() {
         </div>
 
         {/* 📊 Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-5 items-center text-center gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-5 items-center text-center gap-10 ">
           <div>
-            <div className="text-[56px] font-extrabold text-black">700+</div>
+            <div className="text-[45px] font-extrabold text-black text-[#006699]/100 ">700+</div>
             <div className="text-sm text-slate-500 mt-1">Experts</div>
           </div>
 
           <div className="hidden md:block h-20 w-px bg-gray-300 mx-auto" />
 
           <div>
-            <div className="text-[56px] font-extrabold text-black">4500+</div>
+            <div className="text-[45px] font-extrabold text-black text-[#006699]/100">4500+</div>
             <div className="text-sm text-slate-500 mt-1">Projects Delivered</div>
           </div>
 
           <div className="hidden md:block h-20 w-px bg-gray-300 mx-auto" />
 
           <div>
-            <div className="text-[56px] font-extrabold text-black">97%</div>
+            <div className="text-[45px] font-extrabold text-black text-[#006699]/100">97%</div>
             <div className="text-sm text-slate-500 mt-1">Client Satisfaction</div>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function TrustedSection() {
         <div className="mt-6 text-center">
           <p className="text-base font-medium text-black">
             Trusted by startups and{" "}
-            <span className="text-blue-500 font-semibold">Fortune 500</span>{" "}
+            <span className="text-[#006699]/100 font-semibold">Fortune 500</span>{" "}
             companies
           </p>
         </div>

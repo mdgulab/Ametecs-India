@@ -164,7 +164,7 @@ const handleLogoClick = () => {
       className="
         fixed top-0 left-0 right-0 z-50 border-b border-gray-200
         bg-white shadow-md
-        lg:bg-white/70 lg:backdrop-blur-xl lg:shadow-lg
+        lg:bg-white/100 lg:backdrop-blur-xl lg:shadow-lg
       "
     >
 

@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
-const PRIMARY = "#006699";
+const PRIMARY = "#003d5cff";
 
 export default function AboutAmetecs() {
   return (
-    <section className="relative w-full py-24 bg-[#006699] overflow-hidden">
+    <section className="relative w-full py-24 bg-[#004e73]  overflow-hidden">
       
       {/* SUBTLE BACKGROUND GLOW */}
       <div className="pointer-events-none absolute inset-0">

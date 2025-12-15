@@ -78,7 +78,7 @@ const services = [
       "DevOps & cloud automation",
       "High availability & security",
     ],
-    image: "/services/cloud.jpg",
+    image: "/Services/cloud.gif",
   },
   {
     title: "Product Engineering",
@@ -91,7 +91,7 @@ const services = [
       "Scalable system development",
       "Continuous improvement & support",
     ],
-    image: "/services/product.jpg",
+    image: "/Services/product.gif",
   },
   {
     title: "Web Development",
@@ -104,7 +104,7 @@ const services = [
       "API & backend integration",
       "Security & performance optimization",
     ],
-    image: "/services/web.jpg",
+    image: "/Services/fullstack.gif",
   },
   {
     title: "Artificial Intelligence",
@@ -117,7 +117,7 @@ const services = [
       "Predictive analytics & insights",
       "AI-powered business solutions",
     ],
-    image: "/services/ai.jpg",
+    image: "/Services/ai.gif",
   },
   {
     title: "Staff Recruiting",
@@ -130,7 +130,7 @@ const services = [
       "Contract & full-time staffing",
       "Talent screening & onboarding",
     ],
-    image: "/services/recruiting.jpg",
+    image: "/Services/Staff.gif",
   },
 ];
 

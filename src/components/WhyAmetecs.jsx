@@ -70,9 +70,13 @@ export default function WhyAmetecs() {
           <p className="text-xs font-semibold tracking-widest text-[#006699] uppercase mb-3">
             Our Process
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3760]">
-            Our Proven Process for Digital Success
-          </h2>
+          <span className="text-3xl md:text-4xl font-extrabold text-[#0B3760]">
+            Our Proven Process for 
+             </span> <t/><t/> <t/><t/>
+          <span
+           className="md:text-4xl font-extrabold text-[#006699]">
+           Digital Success</span>
+         
           <p className="mt-3 text-gray-600">
             A structured, scalable journey from idea to launch.
           </p>
