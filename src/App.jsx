@@ -21,6 +21,7 @@ import ProductShowcaseSlider from "./components/ProductSlider";
 import TrustedSection from "./components/TrustedSection";
 import StartProjectCTA from "./components/cta";
 import ServicesSection from "./components/AllSercvices";
+import AboutAmetecs from "./components/Home_about";
 
 
 // import WhyAmetecs from "./components/WhyAmetecs";
@@ -38,12 +39,14 @@ export default function App() {
             <>
               <Hero />
               <TrustedSection/>
+              <AboutAmetecs/>
+              <WhyAmetecsTimeline/>
               <ServicesSection/>
-             {/* <WhyAmetecsTimeline/>
-              <ProductShowcaseSlider/> */}
+             
+              <ProductShowcaseSlider/>
               {/* <PartnersAndStats /> */}
-              {/* <WhatWeDo />
-              <IndustriesSection /> */}
+              {/* <WhatWeDo /> */}
+              {/* // <IndustriesSection /> */}
               
               
              

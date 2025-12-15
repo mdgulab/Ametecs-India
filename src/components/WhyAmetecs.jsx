@@ -16,7 +16,6 @@ export default function WhyAmetecs() {
   const items = [
     {
       icon: <FaPuzzlePiece className="text-white text-xl" />,
-      color: "from-[#006699] to-[#00A3C4]",
       title: "Planning & Strategy",
       short:
         "Clear goals, market research and strategic alignment before execution.",
@@ -26,17 +25,15 @@ export default function WhyAmetecs() {
     },
     {
       icon: <FaTools className="text-white text-xl" />,
-      color: "from-[#006699] to-[#008bb5]",
       title: "Design & User Experience",
       short:
         "User-centric design focused on clarity, usability and brand identity.",
       full:
-        "Our design process covers UX research, UI design, wireframing, visual storytelling and content structuring. Every interface is crafted to improve engagement, reduce friction and strengthen your brand presence.",
+        "Our design process covers UX research, UI design, wireframing, visual storytelling and content structuring. Every interface is crafted to improve engagement and reduce friction.",
       gif: "/Design.gif",
     },
     {
       icon: <FaHandshake className="text-white text-xl" />,
-      color: "from-[#006699] to-[#00a0cc]",
       title: "Development & Engineering",
       short:
         "Robust, scalable and performance-driven development execution.",
@@ -46,17 +43,15 @@ export default function WhyAmetecs() {
     },
     {
       icon: <FaShieldAlt className="text-white text-xl" />,
-      color: "from-[#006699] to-[#0094bf]",
       title: "Testing & Quality Assurance",
       short:
         "Rigorous testing to ensure stability, security and performance.",
       full:
-        "Each solution undergoes functional testing, performance optimization and security audits to guarantee reliability.",
+        "Each solution undergoes functional testing, performance optimization and security audits to guarantee reliability and compliance.",
       gif: "/Testing2.gif",
     },
     {
       icon: <FaRocket className="text-white text-xl" />,
-      color: "from-[#006699] to-[#00b0db]",
       title: "Launch & Growth Optimization",
       short:
         "Strategic deployment with analytics and growth tracking.",
@@ -67,18 +62,18 @@ export default function WhyAmetecs() {
   ];
 
   return (
-    <section className="relative w-full py-24 bg-[#f2f8fb] overflow-hidden">
+    <section className="relative w-full py-24 bg-[#f4f9fc] overflow-hidden">
       <div className="container mx-auto px-10 relative">
 
-        {/* Heading */}
+        {/* HEADING */}
         <div className="max-w-3xl mx-auto text-center mb-20">
           <p className="text-xs font-semibold tracking-widest text-[#006699] uppercase mb-3">
             Our Process
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#083047]">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3760]">
             Our Proven Process for Digital Success
           </h2>
-          <p className="mt-3 text-[#4b6b7a]">
+          <p className="mt-3 text-gray-600">
             A structured, scalable journey from idea to launch.
           </p>
         </div>
@@ -93,15 +88,15 @@ export default function WhyAmetecs() {
               exit={{ opacity: 0 }}
             >
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 0.92, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                transition={{ duration: 0.3 }}
+                exit={{ scale: 0.92, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
                 className="bg-white rounded-3xl shadow-2xl w-[680px] max-w-[92%] p-8 relative"
               >
                 <button
                   onClick={() => setOpenIndex(null)}
-                  className="absolute top-4 right-5 text-gray-500 hover:text-black"
+                  className="absolute top-4 right-5 text-gray-500 hover:text-gray-900"
                 >
                   ✕
                 </button>
@@ -110,13 +105,13 @@ export default function WhyAmetecs() {
                   STEP {String(openIndex + 1).padStart(2, "0")}
                 </div>
 
-                <h3 className="text-xl font-bold text-[#083047] mb-4">
+                <h3 className="text-xl font-bold text-[#0B3760] mb-4">
                   {items[openIndex].title}
                 </h3>
 
                 <img
                   src={items[openIndex].gif}
-                  alt=""
+                  alt={items[openIndex].title}
                   className="w-full rounded-xl mb-4"
                 />
 
@@ -130,7 +125,7 @@ export default function WhyAmetecs() {
 
         {/* ZIG-ZAG TIMELINE */}
         <div className="hidden lg:block relative max-w-7xl mx-auto">
-          <div className="absolute left-0 right-0 top-1/2 h-[2px] bg-[#006699]/20" />
+          <div className="absolute left-0 right-0 top-1/2 h-[2px] bg-[#006699]/25" />
 
           <div className="grid grid-cols-5 gap-14">
             {items.map((item, index) => {
@@ -144,17 +139,16 @@ export default function WhyAmetecs() {
                   }`}
                 >
                   {/* CARD */}
-                  <div className="relative bg-white border border-[#e2eef4] rounded-2xl shadow-lg px-6 py-6 text-center w-[260px]">
+                  <div className="relative bg-white border border-[#dbeaf3] rounded-2xl shadow-[0_12px_30px_rgba(11,55,96,0.12)] px-6 py-6 text-center w-[260px]">
 
-                    {/* STEP */}
-                    <div
-                      className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] font-bold px-3 py-1 rounded-full text-white shadow"
+                    {/* STEP BADGE */}
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] font-bold px-3 py-1 rounded-full text-white shadow"
                       style={{ background: PRIMARY }}
                     >
                       STEP {String(index + 1).padStart(2, "0")}
                     </div>
 
-                    <h3 className="text-sm font-semibold text-[#083047] mt-3 mb-2">
+                    <h3 className="text-sm font-semibold text-[#0B3760] mt-3 mb-2">
                       {item.title}
                     </h3>
 
@@ -164,22 +158,22 @@ export default function WhyAmetecs() {
 
                     <img
                       src={item.gif}
-                      alt=""
+                      alt={item.title}
                       className="w-full rounded-lg my-4"
                     />
 
                     <button
                       onClick={() => setOpenIndex(index)}
-                      className="text-xs font-semibold text-[#006699]"
+                      className="text-xs font-semibold text-[#006699] hover:underline"
                     >
                       Read More
                     </button>
                   </div>
 
-                  {/* ICON */}
+                  {/* ICON NODE */}
                   <div className="mt-5">
                     <div
-                      className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-md`}
+                      className="h-12 w-12 rounded-2xl bg-[#006699] flex items-center justify-center shadow-md"
                     >
                       {item.icon}
                     </div>
