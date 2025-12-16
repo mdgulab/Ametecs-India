@@ -119,7 +119,7 @@ export default function Hero() {
                 <a
                   href="#contact"
                   className="inline-block px-5 py-3 rounded-md text-white font-semibold shadow"
-                  style={{ background: PRIMARY, boxShadow: "0 8px 24px rgba(255, 255, 255, 0.53)" }}
+                  style={{ background: PRIMARY, boxShadow: "0 8px 24px #5db6ffbe" }}
                 >
                   Let’s Discuss
                 </a>

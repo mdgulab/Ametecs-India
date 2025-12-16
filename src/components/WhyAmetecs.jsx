@@ -15,178 +15,222 @@ export default function WhyAmetecs() {
 
   const items = [
     {
-      icon: <FaPuzzlePiece className="text-white text-xl" />,
+      icon: <FaPuzzlePiece className="text-white text-lg" />,
       title: "Planning & Strategy",
       short:
         "Clear goals, market research and strategic alignment before execution.",
       full:
-        "From the initial idea to final delivery, our planning phase defines business goals, brand positioning, target audience and success metrics. We perform deep competitor and market analysis to identify opportunities and create a roadmap that ensures long-term growth.",
+        "From the initial idea to final delivery, our planning phase defines business goals, brand positioning, target audience and success metrics.",
       gif: "/Planning.gif",
     },
     {
-      icon: <FaTools className="text-white text-xl" />,
+      icon: <FaTools className="text-white text-lg" />,
       title: "Design & User Experience",
       short:
         "User-centric design focused on clarity, usability and brand identity.",
       full:
-        "Our design process covers UX research, UI design, wireframing, visual storytelling and content structuring. Every interface is crafted to improve engagement and reduce friction.",
+        "Our design process covers UX research, UI design, wireframing and visual storytelling.",
       gif: "/Design.gif",
     },
     {
-      icon: <FaHandshake className="text-white text-xl" />,
+      icon: <FaHandshake className="text-white text-lg" />,
       title: "Development & Engineering",
       short:
         "Robust, scalable and performance-driven development execution.",
       full:
-        "We build secure, scalable solutions using clean architecture and modern technologies across web, mobile and enterprise platforms.",
+        "We build secure, scalable solutions using clean architecture and modern technologies.",
       gif: "/Development.gif",
     },
     {
-      icon: <FaShieldAlt className="text-white text-xl" />,
+      icon: <FaShieldAlt className="text-white text-lg" />,
       title: "Testing & Quality Assurance",
       short:
         "Rigorous testing to ensure stability, security and performance.",
       full:
-        "Each solution undergoes functional testing, performance optimization and security audits to guarantee reliability and compliance.",
+        "Each solution undergoes functional testing, performance optimization and security audits.",
       gif: "/Testing2.gif",
     },
     {
-      icon: <FaRocket className="text-white text-xl" />,
+      icon: <FaRocket className="text-white text-lg" />,
       title: "Launch & Growth Optimization",
       short:
         "Strategic deployment with analytics and growth tracking.",
       full:
-        "Post-launch optimization ensures continuous performance improvements, adoption growth and measurable business impact.",
+        "Post-launch optimization ensures continuous performance improvements.",
       gif: "/Launch.gif",
     },
   ];
 
   return (
-    <section className="relative w-full py-24 bg-[#f4f9fc] overflow-hidden">
-      <div className="container mx-auto px-10 relative">
+    <section className="w-full py-20 bg-[#f4f9fc] dark:bg-[#060c12]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* HEADING */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-xs font-semibold tracking-widest text-[#006699] uppercase mb-3">
             Our Process
           </p>
-          <span className="text-3xl md:text-4xl font-extrabold text-[#0B3760]">
-            Our Proven Process for 
-             </span> <t/><t/> <t/><t/>
-          <span
-           className="md:text-4xl font-extrabold text-[#006699]">
-           Digital Success</span>
-         
-          <p className="mt-3 text-gray-600">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3760] dark:text-white">
+            Our Proven Process for{" "}
+            <span className="text-[#006699]">Digital Success</span>
+          </h2>
+          <p className="mt-3 text-gray-600 dark:text-gray-400">
             A structured, scalable journey from idea to launch.
           </p>
         </div>
 
-        {/* MODAL */}
-        <AnimatePresence>
-          {openIndex !== null && (
-            <motion.div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+        {/* ================= MOBILE / TABLET ================= */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:hidden">
+          {items.map((item, i) => (
+            <div
+              key={i}
+              className="
+                bg-white dark:bg-[#0b1621]
+                rounded-2xl shadow-md p-6 text-center
+                border border-transparent
+                hover:border-[#006699]
+                hover:shadow-[0_0_0_2px_rgba(0,102,153,0.35)]
+                transition
+              "
             >
-              <motion.div
-                initial={{ scale: 0.92, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.92, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="bg-white rounded-3xl shadow-2xl w-[680px] max-w-[92%] p-8 relative"
+              <div
+                className="mx-auto mb-4 w-12 h-12 rounded-xl flex items-center justify-center"
+                style={{ background: PRIMARY }}
               >
-                <button
-                  onClick={() => setOpenIndex(null)}
-                  className="absolute top-4 right-5 text-gray-500 hover:text-gray-900"
-                >
-                  ✕
-                </button>
+                {item.icon}
+              </div>
 
-                <div className="text-xs font-bold text-[#006699] mb-2">
-                  STEP {String(openIndex + 1).padStart(2, "0")}
-                </div>
+              <h3 className="font-semibold text-[#0B3760] dark:text-white mb-2">
+                {item.title}
+              </h3>
 
-                <h3 className="text-xl font-bold text-[#0B3760] mb-4">
-                  {items[openIndex].title}
-                </h3>
+              <img
+                src={item.gif}
+                alt={item.title}
+                className="w-full h-40 object-cover rounded-lg mb-3"
+              />
 
-                <img
-                  src={items[openIndex].gif}
-                  alt={items[openIndex].title}
-                  className="w-full rounded-xl mb-4"
-                />
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                {item.short}
+              </p>
 
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  {items[openIndex].full}
-                </p>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <button
+                onClick={() => setOpenIndex(i)}
+                className="text-sm font-semibold text-[#006699]"
+              >
+                Read More →
+              </button>
+            </div>
+          ))}
+        </div>
 
-        {/* ZIG-ZAG TIMELINE */}
-        <div className="hidden lg:block relative max-w-7xl mx-auto">
+        {/* ================= DESKTOP ZIG-ZAG ================= */}
+        <div className="hidden lg:block relative">
           <div className="absolute left-0 right-0 top-1/2 h-[2px] bg-[#006699]/25" />
 
-          <div className="grid grid-cols-5 gap-14">
+          <div className="grid grid-cols-5 gap-10">
             {items.map((item, index) => {
-              const isEven = index % 2 === 0;
+              const offset =
+                index % 2 === 0 ? "-translate-y-8" : "translate-y-8";
 
               return (
                 <div
                   key={index}
-                  className={`flex flex-col items-center ${
-                    isEven ? "-translate-y-16" : "translate-y-16"
-                  }`}
+                  className={`flex flex-col items-center ${offset}`}
                 >
-                  {/* CARD */}
-                  <div className="relative bg-white border border-[#dbeaf3] rounded-2xl shadow-[0_12px_30px_rgba(11,55,96,0.12)] px-6 py-6 text-center w-[260px]">
-
-                    {/* STEP BADGE */}
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] font-bold px-3 py-1 rounded-full text-white shadow"
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="
+                      bg-white dark:bg-[#0b1621]
+                      rounded-2xl p-6 w-[240px] text-center
+                      border border-transparent
+                      shadow-lg
+                      hover:border-[#006699]
+                      hover:shadow-[0_0_0_2px_rgba(0,102,153,0.35)]
+                      transition-all
+                    "
+                  >
+                    <span
+                      className="text-[10px] font-bold text-white px-3 py-1 rounded-full"
                       style={{ background: PRIMARY }}
                     >
                       STEP {String(index + 1).padStart(2, "0")}
-                    </div>
+                    </span>
 
-                    <h3 className="text-sm font-semibold text-[#0B3760] mt-3 mb-2">
+                    <h3 className="text-sm font-semibold text-[#0B3760] dark:text-white mt-3 mb-2">
                       {item.title}
                     </h3>
-
-                    <p className="text-[13px] text-gray-700">
-                      {item.short}
-                    </p>
 
                     <img
                       src={item.gif}
                       alt={item.title}
-                      className="w-full rounded-lg my-4"
+                      className="w-full h-32 object-cover rounded-lg mb-3"
                     />
+
+                    <p className="text-[13px] text-gray-600 dark:text-gray-400 mb-3">
+                      {item.short}
+                    </p>
 
                     <button
                       onClick={() => setOpenIndex(index)}
-                      className="text-xs font-semibold text-[#006699] hover:underline"
+                      className="text-xs font-semibold text-[#006699]"
                     >
                       Read More
                     </button>
-                  </div>
+                  </motion.div>
 
-                  {/* ICON NODE */}
-                  <div className="mt-5">
-                    <div
-                      className="h-12 w-12 rounded-2xl bg-[#006699] flex items-center justify-center shadow-md"
-                    >
-                      {item.icon}
-                    </div>
+                  <div
+                    className="mt-4 w-12 h-12 rounded-xl flex items-center justify-center shadow"
+                    style={{ background: PRIMARY }}
+                  >
+                    {item.icon}
                   </div>
                 </div>
               );
             })}
           </div>
         </div>
+
+        {/* ================= MODAL ================= */}
+        <AnimatePresence>
+          {openIndex !== null && (
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="bg-white dark:bg-[#0b1621] rounded-2xl shadow-2xl w-full max-w-xl p-6 relative"
+              >
+                <button
+                  onClick={() => setOpenIndex(null)}
+                  className="absolute top-3 right-4 text-gray-500 dark:text-gray-400 hover:text-black"
+                >
+                  ✕
+                </button>
+
+                <h3 className="text-lg font-bold text-[#0B3760] dark:text-white mb-3">
+                  {items[openIndex].title}
+                </h3>
+
+                <img
+                  src={items[openIndex].gif}
+                  alt=""
+                  className="w-full h-48 object-cover rounded-xl mb-4"
+                />
+
+                <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
+                  {items[openIndex].full}
+                </p>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

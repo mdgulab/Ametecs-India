@@ -25,6 +25,7 @@ module.exports = {
      fontFamily: {
   sans: ["Poppins", "sans-serif"],
 },
+ backdropBlur: {},
         // Optional: provide a named primary for direct use (bg-primary, text-primary)
         primary: {
           DEFAULT: '#006699',
@@ -34,5 +35,7 @@ module.exports = {
     },
   },
   plugins: [],
+ 
 };
 
+ 

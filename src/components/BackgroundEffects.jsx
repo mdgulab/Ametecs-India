@@ -1,44 +1,97 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useEffect } from "react";
 
 export default function BackgroundEffects() {
-  const particles = Array.from({ length: 25 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // ultra smooth mouse tracking
+  const smoothX = useSpring(mouseX, { stiffness: 40, damping: 20 });
+  const smoothY = useSpring(mouseY, { stiffness: 40, damping: 20 });
+
+  useEffect(() => {
+    function handleMouse(e) {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    }
+    window.addEventListener("mousemove", handleMouse);
+    return () => window.removeEventListener("mousemove", handleMouse);
+  }, []);
+
+  const particles = Array.from({ length: 30 });
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[0] overflow-hidden">
 
-      {/* AI FLOATING PARTICLES */}
-      {particles.map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-[3px] h-[3px] bg-blue-400/40 rounded-full"
-          initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            opacity: 0.2,
-          }}
-          animate={{
-            y: [null, Math.random() * -200],
-            opacity: [0.3, 0.8, 0.3],
-          }}
-          transition={{
-            duration: 6 + Math.random() * 8,
-            repeat: Infinity,
-            delay: Math.random() * 5,
-          }}
-        />
-      ))}
+      {/* 🌌 FLOATING AI PARTICLES */}
+      {particles.map((_, i) => {
+        const size = Math.random() * 2 + 2;
+        const depth = Math.random() * 30 + 10;
 
-      {/* AI ANIMATED LINES */}
-      <svg className="absolute w-full h-full opacity-[0.25]">
+        return (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-[#006699]/40"
+            style={{
+              width: size,
+              height: size,
+              x: useSpring(
+                smoothX,
+                { stiffness: 30, damping: 20 }
+              ),
+              y: useSpring(
+                smoothY,
+                { stiffness: 30, damping: 20 }
+              ),
+            }}
+            initial={{
+              left: Math.random() * window.innerWidth,
+              top: Math.random() * window.innerHeight,
+              opacity: 0.3,
+            }}
+            animate={{
+              opacity: [0.3, 0.8, 0.3],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 8 + Math.random() * 6,
+              repeat: Infinity,
+              delay: Math.random() * 4,
+            }}
+          />
+        );
+      })}
+
+      {/* 🔗 AI CONNECTING LINES */}
+      <svg className="absolute w-full h-full opacity-[0.18]">
         <motion.path
           d="M0 300 Q600 200 1200 300 T2400 300"
-          stroke="#d2e1ff40"
-          strokeWidth="2"
+          stroke="#006699"
+          strokeWidth="1.5"
           fill="none"
-          animate={{ pathLength: [0, 1, 0] }}
-          transition={{ duration: 6, repeat: Infinity }}
+          animate={{
+            pathLength: [0, 1, 0],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         />
       </svg>
+
+      {/* ✨ CURSOR GLOW */}
+      <motion.div
+        className="absolute w-[28px] h-[28px] rounded-full blur-[30px]"
+        style={{
+          background: "radial-gradient(circle, #20b5ffff, transparent 90%)",
+          x: smoothX,
+          y: smoothY,
+          translateX: "-50%",
+          translateY: "-50%",
+        }}
+      />
     </div>
   );
 }

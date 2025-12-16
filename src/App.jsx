@@ -39,9 +39,9 @@ export default function App() {
           element={
             <>
               <Hero />
-              <TrustedSection/>
+              <TrustedSection/> <WhyAmetecsTimeline/>
               <AboutAmetecs/>
-              <WhyAmetecsTimeline/>
+             
               <ServicesSection/>
              
               <ProductShowcaseSlider/>
