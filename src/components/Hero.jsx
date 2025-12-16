@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 // -------------------------------------------------
 // CONFIG
 // -------------------------------------------------
-const PRIMARY = "#27b7ffff"; // your theme color
-const TEXT_DARK = "#ffffffff"; // dark heading color
+const PRIMARY = "#006699"; // your theme color
+const TEXT_DARK = "#1d1d1dff"; // dark heading color
 const ILLUST_SRC = "/banner2s.jpg"; // <-- replace with your image path
 
 // -------------------------------------------------
@@ -16,8 +16,6 @@ const ILLUST_SRC = "/banner2s.jpg"; // <-- replace with your image path
 function RotatingWords() {
   const words = [
     "Digital Marketing",
-    "Augmented Reality",
-    "Virtual Reality",
     "UI/UX Design",
     "Cloud Solutions",
     "Product Engineering",
@@ -62,7 +60,7 @@ export default function Hero() {
 <section
   className="relative overflow-hidden bg-cover bg-center bg-no-repeat font-[Poppins] pt-[200px] pb-[100px]"
   style={{
-    backgroundImage: "url('/banner.gif')", // your bg
+    backgroundImage: "url('/banner.jpg')", // your bg
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -71,7 +69,7 @@ export default function Hero() {
 
 >
   {/* Dark / blue overlay for readability */}
-  <div className="absolute inset-0 bg-[#006699]/30 backdrop-blur-[3px] -z-3"></div>
+  <div className="absolute inset-0 bg-[#006699]/5 backdrop-blur-[0px] -z-3"></div>
 
   {/* OPTIONAL: animated slight zoom effect */}
   <motion.div
@@ -100,7 +98,7 @@ export default function Hero() {
                   className="w-0.5 h-6"
                   style={{ background: PRIMARY, display: "inline-block", borderRadius: 2 }}
                 />
-                <div className="text-xs md:text-sm font-semibold text-[#ffffff]">
+                <div className="text-xs md:text-sm font-semibold text-[#006699]">
                   Digital Transformation Company
                 </div>
               </div>
@@ -119,7 +117,7 @@ export default function Hero() {
                 <a
                   href="#contact"
                   className="inline-block px-5 py-3 rounded-md text-white font-semibold shadow"
-                  style={{ background: PRIMARY, boxShadow: "0 8px 24px #5db6ffbe" }}
+                  style={{ background: PRIMARY, boxShadow: "0 8px 24px #87d7ffff" }}
                 >
                   Let’s Discuss
                 </a>
@@ -132,7 +130,7 @@ export default function Hero() {
 
                 {/* Quality Services */}
                 <div className="flex items-center gap-3">
-                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-white/100 shadow-sm">
+                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-[#006699] shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
                       <path d="M12 2L20 6v6c0 5-4 9-8 10-4-1-8-5-8-10V6l8-4z"
                         fill={PRIMARY} opacity="0.12" />
@@ -140,14 +138,14 @@ export default function Hero() {
                         stroke={PRIMARY} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <div className="text-sm font-medium text-white/100">Quality Services</div>
+                  <div className="text-sm font-medium text-[#006699]/100">Quality Services</div>
                 </div>
 
                 <span className="text-slate-300">|</span>
 
                 {/* Customized Solutions */}
                 <div className="flex items-center gap-3">
-                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-white/100 shadow-sm">
+                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-[#006699] shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
                       <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7z"
                         fill={PRIMARY} opacity="0.12" />
@@ -155,23 +153,22 @@ export default function Hero() {
                         stroke={PRIMARY} strokeWidth="0.8" opacity="0.95" />
                     </svg>
                   </span>
-                  <div className="text-sm font-medium text-white/100">Customized Solutions</div>
+                  <div className="text-sm font-medium text-[#006699]/100">Customized Solutions</div>
                 </div>
 
                 <span className="text-slate-300">|</span>
 
                 {/* User-Centric Design */}
                 <div className="flex items-center gap-3">
-                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-white/100 shadow-sm">
+                  <span className="w-9 h-9 rounded-full flex items-center justify-center bg-[#006699] shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
                       <circle cx="12" cy="8" r="3" fill={PRIMARY} opacity="0.12" />
                       <path d="M4 20c1.6-4 6-6 8-6s6.4 2 8 6"
                         stroke={PRIMARY} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <div className="text-sm font-medium text-white/100">User-Centric Design</div>
+                  <div className="text-sm font-medium text-[#006699]/100">User-Centric Design</div>
                 </div>
-
               </div>
             </div>
           </div>

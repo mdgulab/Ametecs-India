@@ -28,32 +28,8 @@ const services = [
     ],
     image: "/Services/digital_Marketing.gif",
   },
-  {
-    title: "Augmented Reality",
-    icon: FaCube,
-    desc:
-      "Immersive AR experiences that bridge the gap between physical and digital worlds.",
-    points: [
-      "AR product visualization",
-      "Interactive brand experiences",
-      "WebAR & mobile AR applications",
-      "Enterprise-grade AR solutions",
-    ],
-    image: "/Services/AR.gif",
-  },
-  {
-    title: "Virtual Reality",
-    icon: FaVrCardboard,
-    desc:
-      "High-impact VR solutions for training, simulations and interactive experiences.",
-    points: [
-      "VR training & simulations",
-      "Virtual tours & demonstrations",
-      "Metaverse-ready experiences",
-      "Custom VR application development",
-    ],
-    image: "/Services/vr.gif",
-  },
+  
+  
   {
     title: "UI/UX Design",
     icon: FaPaintBrush,

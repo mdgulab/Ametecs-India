@@ -88,7 +88,7 @@ export default function TrustedStrip() {
                   rounded-xl md:rounded-2xl
                   p-4 md:p-10
                   text-center
-                  bg-[#00608f]/60 backdrop-blur-md
+                  bg-[#006699]/80 backdrop-blur-md
                   border border-white/70
                   shadow-[0_5px_25px_rgba(0,0,0,0.25)]
                 "
