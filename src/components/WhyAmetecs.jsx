@@ -62,61 +62,62 @@ export default function WhyAmetecs() {
   ];
 
   return (
-    <section className="w-full py-20 bg-[#f4f9fc] dark:bg-[#060c12]">
+    <section className="w-full py-14 sm:py-20 bg-[#f4f9fc] dark:bg-[#060c12]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* HEADING */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-xs font-semibold tracking-widest text-[#006699] uppercase mb-3">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <p className="text-xs font-semibold tracking-widest text-[#006699] uppercase mb-2 sm:mb-3">
             Our Process
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3760] dark:text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B3760] dark:text-white">
             Our Proven Process for{" "}
             <span className="text-[#006699]">Digital Success</span>
           </h2>
-          <p className="mt-3 text-gray-600 dark:text-gray-400">
+          <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-600 dark:text-gray-400">
             A structured, scalable journey from idea to launch.
           </p>
         </div>
 
         {/* ================= MOBILE / TABLET ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 lg:hidden">
           {items.map((item, i) => (
             <div
               key={i}
               className="
                 bg-white dark:bg-[#0b1621]
-                rounded-2xl shadow-md p-6 text-center
+                rounded-2xl shadow-sm
+                p-5 sm:p-6
+                text-center
                 border border-transparent
                 hover:border-[#006699]
-                hover:shadow-[0_0_0_2px_rgba(0,102,153,0.35)]
                 transition
               "
             >
               <div
-                className="mx-auto mb-4 w-12 h-12 rounded-xl flex items-center justify-center"
+                className="mx-auto mb-4 w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center"
                 style={{ background: PRIMARY }}
               >
                 {item.icon}
               </div>
 
-              <h3 className="font-semibold text-[#0B3760] dark:text-white mb-2">
+              <h3 className="font-semibold text-sm sm:text-base text-[#0B3760] dark:text-white mb-2">
                 {item.title}
               </h3>
 
               <img
                 src={item.gif}
                 alt={item.title}
-                className="w-full h-40 object-cover rounded-lg mb-3"
+                className="w-full h-36 sm:h-40 object-cover rounded-lg mb-3"
               />
 
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4">
                 {item.short}
               </p>
 
               <button
                 onClick={() => setOpenIndex(i)}
-                className="text-sm font-semibold text-[#006699]"
+                className="text-sm font-semibold text-[#006699] hover:underline"
               >
                 Read More →
               </button>
@@ -124,7 +125,7 @@ export default function WhyAmetecs() {
           ))}
         </div>
 
-        {/* ================= DESKTOP ZIG-ZAG ================= */}
+        {/* ================= DESKTOP ZIG-ZAG (UNCHANGED) ================= */}
         <div className="hidden lg:block relative">
           <div className="absolute left-0 right-0 top-1/2 h-[2px] bg-[#006699]/25" />
 
@@ -134,20 +135,15 @@ export default function WhyAmetecs() {
                 index % 2 === 0 ? "-translate-y-8" : "translate-y-8";
 
               return (
-                <div
-                  key={index}
-                  className={`flex flex-col items-center ${offset}`}
-                >
+                <div key={index} className={`flex flex-col items-center ${offset}`}>
                   <motion.div
                     whileHover={{ y: -4 }}
                     className="
                       bg-white dark:bg-[#0b1621]
                       rounded-2xl p-6 w-[240px] text-center
-                      border border-transparent
-                      shadow-lg
+                      shadow-lg border border-transparent
                       hover:border-[#006699]
-                      hover:shadow-[0_0_0_2px_rgba(0,102,153,0.35)]
-                      transition-all
+                      transition
                     "
                   >
                     <span
@@ -205,11 +201,11 @@ export default function WhyAmetecs() {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ duration: 0.25 }}
-                className="bg-white dark:bg-[#0b1621] rounded-2xl shadow-2xl w-full max-w-xl p-6 relative"
+                className="bg-white dark:bg-[#0b1621] rounded-2xl shadow-2xl w-full max-w-lg p-5 sm:p-6 relative"
               >
                 <button
                   onClick={() => setOpenIndex(null)}
-                  className="absolute top-3 right-4 text-gray-500 dark:text-gray-400 hover:text-black"
+                  className="absolute top-3 right-4 text-gray-500 hover:text-black"
                 >
                   ✕
                 </button>
@@ -221,7 +217,7 @@ export default function WhyAmetecs() {
                 <img
                   src={items[openIndex].gif}
                   alt=""
-                  className="w-full h-48 object-cover rounded-xl mb-4"
+                  className="w-full h-40 sm:h-48 object-cover rounded-xl mb-4"
                 />
 
                 <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
@@ -231,6 +227,7 @@ export default function WhyAmetecs() {
             </motion.div>
           )}
         </AnimatePresence>
+
       </div>
     </section>
   );

@@ -23,6 +23,7 @@ import StartProjectCTA from "./components/cta";
 import ServicesSection from "./components/AllSercvices";
 import AboutAmetecs from "./components/Home_about";
 import FAQSection from "./components/FAQsection";
+import AwardsRecognition from "./components/Award";
 
 
 // import WhyAmetecs from "./components/WhyAmetecs";
@@ -39,10 +40,13 @@ export default function App() {
           element={
             <>
               <Hero />
-              <TrustedSection/> <WhyAmetecsTimeline/>
-              <AboutAmetecs/>
+             <AwardsRecognition/>
+             <TrustedSection/>
+              <ServicesSection/> <AboutAmetecs/>
+               <WhyAmetecsTimeline/>
+              
              
-              <ServicesSection/>
+              
              
               <ProductShowcaseSlider/>
               {/* <PartnersAndStats /> */}
@@ -75,7 +79,7 @@ export default function App() {
       </Routes>
 
       {/* GLOBAL COMPONENTS */}
-      <BackgroundEffects />
+      {/* <BackgroundEffects /> */}
       {/* <ThemeToggle /> */}
       <WhatsappButton />
          

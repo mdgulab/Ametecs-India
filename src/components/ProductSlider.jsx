@@ -284,10 +284,8 @@ export default function ProductShowcaseSlider({
   return (
     <section 
     id="Products" 
-    className="relative py-16 md:py-20 bg-gradient-to-b from-[#f3f8fc] to-white overflow-hidden">
+    className="relative py-16 md:py-20 bg-white overflow-hidden">
       {/* subtle background circles */}
-      <div className="pointer-events-none absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[#006699]/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-[#00A3C4]/10 blur-3xl" />
 
       <div className="container mx-auto px-4 md:px-6 relative">
         {/* section header */}
