@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { jobData } from "../data/jobData";
+import { jobData } from "./JobData";
 import { FiMapPin, FiBriefcase, FiClock, FiLayers } from "react-icons/fi";
 
 export default function JobDetails() {
