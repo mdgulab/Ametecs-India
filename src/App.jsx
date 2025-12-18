@@ -28,9 +28,7 @@ import PolicyPage from "./components/PolicyPage";
 
 import JobDetails from "./components/Career/JobDetails";
 import Career from "./components/Career/career";
-import ResumeApplyModal from "./components/Career/ResumeApplyModal";
-import ApplyModal from "./components/Career/ApplyModel";
-import AdminJobs from "./components/Admin/AdminJobs";
+
 
 
 // import WhyAmetecs from "./components/WhyAmetecs";
@@ -90,7 +88,7 @@ export default function App() {
 
 <Route path="/career" element={<Career />} />
 <Route path="/career/:id" element={<JobDetails />} />
-<Route path="/admin/jobs" element={<AdminJobs />} />
+
 
 
 
