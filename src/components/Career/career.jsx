@@ -6,7 +6,7 @@ import {
   FiBriefcase,
   FiClock,
 } from "react-icons/fi";
-import { jobData } from "../data/jobData";
+import { jobData } from "./../data/jobData";
 
 const PER_PAGE = 8;
 
