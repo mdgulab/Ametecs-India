@@ -11,7 +11,7 @@ export default function AdminJobs() {
 
   return (
     <div className="p-10 bg-[#F4FAFC] min-h-screen">
-      <h1 className="text-3xl font-bold mb-6">Admin Job CMS</h1>
+      <h1 className="text-3xl font-bold mb-6"> Admin Job CMS </h1>
 
       <AdminForm onSave={addJob} />
 
