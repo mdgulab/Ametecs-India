@@ -24,6 +24,13 @@ import ServicesSection from "./components/AllSercvices";
 import AboutAmetecs from "./components/Home_about";
 import FAQSection from "./components/FAQsection";
 import AwardsRecognition from "./components/Award";
+import PolicyPage from "./components/PolicyPage";
+
+import JobDetails from "./components/Career/JobDetails";
+import Career from "./components/Career/career";
+import ResumeApplyModal from "./components/Career/ResumeApplyModal";
+import ApplyModal from "./components/Career/ApplyModel";
+import AdminJobs from "./components/Admin/AdminJobs";
 
 
 // import WhyAmetecs from "./components/WhyAmetecs";
@@ -73,6 +80,20 @@ export default function App() {
         <Route path="/contact" element={<Contact/>}/>
 {/* <Route path="/partner" element={<PartnershipSection/>}/> */}
 <Route path="/team" element={<TeamSection/>}/>
+
+<Route path="/privacy-policy" element={<PolicyPage/>} />
+<Route path="/terms-of-use" element={<PolicyPage />} />
+<Route path="/refund-policy" element={<PolicyPage />} />
+<Route path="/disclaimer" element={<PolicyPage />} />
+<Route path="/data-protection" element={<PolicyPage />} />
+
+
+<Route path="/career" element={<Career />} />
+<Route path="/career/:id" element={<JobDetails />} />
+<Route path="/admin/jobs" element={<AdminJobs />} />
+
+
+
 
         {/* CONTACT PAGE (if you enable it later) */}
         {/* <Route path="/contact" element={<Contact />} /> */}
