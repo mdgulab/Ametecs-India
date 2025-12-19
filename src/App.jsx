@@ -28,6 +28,8 @@ import PolicyPage from "./components/PolicyPage";
 
 import JobDetails from "./components/Career/JobDetails";
 import Career from "./components/Career/career";
+import Services from "./components/Services/ServicePage";
+import ServiceDetail from "./components/Services/ServicesDetails";
 
 
 
@@ -85,12 +87,14 @@ export default function App() {
 <Route path="/disclaimer" element={<PolicyPage />} />
 <Route path="/data-protection" element={<PolicyPage />} />
 
-
+{/* Career */}
 <Route path="/career" element={<Career />} />
 <Route path="/career/:id" element={<JobDetails />} />
 
-
-
+{/* Services */}
+<Route path="/services" element={<Services/>} />
+        <Route path="/services/:serviceId" element={<ServiceDetail/>} />
+        <Route path="/contact" element={<Contact/>} />
 
 
         {/* CONTACT PAGE (if you enable it later) */}

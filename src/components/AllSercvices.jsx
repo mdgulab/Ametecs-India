@@ -22,7 +22,7 @@ const services = [
       "Lead generation & campaign management",
       "Analytics, tracking & optimization",
     ],
-    image: "/Services/digital_Marketing.gif",
+    image: "/services/digital-marketing.gif",
   },
   {
     title: "UI/UX Design",

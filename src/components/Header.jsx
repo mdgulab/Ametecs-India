@@ -1,6 +1,21 @@
 // =======================
 // Ametecs Mega Header (FINAL)
 // =======================
+import {
+  FiSmartphone,
+  FiGlobe,
+  FiPenTool,
+  FiTrendingUp,
+  FiCloud,
+  FiCpu,
+  FiBox,
+  FiUsers,
+  FiPhoneCall,
+  FiLayers,
+  FiSettings,
+  FiBriefcase,
+  FiDatabase,
+} from "react-icons/fi";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,6 +32,7 @@ import {
 ======================= */
 
 const whoWeAre = [
+  
   {
     id: "about",
     label: "About Us",
@@ -69,45 +85,61 @@ const whatWeDo = [
     label: "Services",
     items: [
       {
-        title: "App Development",
-        subtitle: "Android, iOS & cross-platform apps",
-        link: "/services/app-development",
-      },
-      {
-        title: "Web Development",
-        subtitle: "Business & enterprise websites",
-        link: "/services/web-development",
-      },
-      {
-        title: "UI / UX Design",
-        subtitle: "User-centric product design",
-        link: "/services/ui-ux-design",
-      },
-      {
-        title: "Digital Marketing",
-        subtitle: "SEO, PPC & growth marketing",
-        link: "/services/digital-marketing",
-      },
-      {
-        title: "Cloud Solutions",
-        subtitle: "Cloud setup, migration & DevOps",
-        link: "/services/cloud-solutions",
-      },
-      {
-        title: "AI Solutions",
-        subtitle: "Custom AI & automation systems",
-        link: "/services/ai-solutions",
-      },
-      {
-        title: "Product Engineering",
-        subtitle: "Scalable SaaS product development",
-        link: "/services/product-engineering",
-      },
-      {
-        title: "Staff Recruiting",
-        subtitle: "Tech & non-tech hiring",
-        link: "/services/staff-recruiting",
-      },
+  title: "App Development",
+  subtitle: "Android, iOS & cross-platform apps",
+  link: "/services/app-development",
+  icon: <FiSmartphone />,   // 📱 Mobile
+},
+
+{
+  title: "Web Development",
+  subtitle: "Business & enterprise websites",
+  link: "/services/web-development",
+  icon: <FiGlobe />,        // 🌐 Web
+},
+
+{
+  title: "UI / UX Design",
+  subtitle: "User-centric product design",
+  link: "/services/ui-ux-design",
+  icon: <FiPenTool />,      // ✏️ Design
+},
+
+{
+  title: "Digital Marketing",
+  subtitle: "SEO, PPC & growth marketing",
+  link: "/services/digital-marketing",
+  icon: <FiTrendingUp />,   // 📈 Growth
+},
+
+{
+  title: "Cloud Solutions",
+  subtitle: "Cloud setup, migration & DevOps",
+  link: "/services/cloud-solutions",
+  icon: <FiCloud />,        // ☁️ Cloud
+},
+
+{
+  title: "AI Solutions",
+  subtitle: "Custom AI & automation systems",
+  link: "/services/ai-solutions",
+  icon: <FiCpu />,          // 🧠 AI / Compute
+},
+
+{
+  title: "Product Engineering",
+  subtitle: "Scalable SaaS product development",
+  link: "/services/product-engineering",
+  icon: <FiBox />,          // 📦 Product
+},
+
+{
+  title: "Staff Recruiting",
+  subtitle: "Tech & non-tech hiring",
+  link: "/services/staff-recruiting",
+  icon: <FiUsers />,        // 👥 People
+},
+
     ],
   },
   {
@@ -115,30 +147,40 @@ const whatWeDo = [
     label: "Products",
     items: [
       {
-        title: "SmartDCM",
-        subtitle: "AI collection CRM & dialer",
-        link: "https://ametecsindia.com/smartdcm.html",
-      },
-      {
-        title: "LeadGER",
-        subtitle: "Telecalling & lead management CRM",
-        link: "https://ametecsindia.com/leadger.html",
-      },
-      {
-        title: "Telozar",
-        subtitle: "Remote staff & BPO control",
-        link: "https://ametecsindia.com/telozar.html",
-      },
-      {
-        title: "SmartPayroll",
-        subtitle: "HR & payroll automation",
-        link: "https://ametecsindia.com/smartpayroll.html",
-      },
-      {
-        title: "CoreOps CRM",
-        subtitle: "Enterprise workflow CRM",
-        link: "https://ametecsindia.com/coreops-crm.html",
-      },
+  title: "SmartDCM",
+  subtitle: "AI collection CRM & dialer",
+  link: "https://ametecsindia.com/smartdcm.html",
+  icon: <FiPhoneCall />,    // ☎️ Dialer
+},
+
+{
+  title: "LeadGER",
+  subtitle: "Telecalling & lead management CRM",
+  link: "https://ametecsindia.com/leadger.html",
+  icon: <FiLayers />,       // 🧩 CRM / Leads
+},
+
+{
+  title: "Telozar",
+  subtitle: "Remote staff & BPO control",
+  link: "https://ametecsindia.com/telozar.html",
+  icon: <FiSettings />,     // ⚙️ Control
+},
+
+{
+  title: "SmartPayroll",
+  subtitle: "HR & payroll automation",
+  link: "https://ametecsindia.com/smartpayroll.html",
+  icon: <FiBriefcase />,    // 💼 HR
+},
+
+{
+  title: "CoreOps CRM",
+  subtitle: "Enterprise workflow CRM",
+  link: "https://ametecsindia.com/coreops-crm.html",
+  icon: <FiDatabase />,     // 🗄️ Data / Ops
+},
+
     ],
   },
 ];
@@ -326,9 +368,10 @@ export default function Header() {
                     onClick={closeMega}
                     className="flex gap-3 p-3 rounded-lg hover:bg-blue-50"
                   >
-                    <div className="w-10 h-10 border rounded-full flex items-center justify-center text-blue-700 font-bold">
-                      {i + 1}
-                    </div>
+                    <div className="w-10 h-10 border rounded-full flex items-center justify-center text-blue-700">
+  {item.icon}
+</div>
+
                     <div>
                       <div className="font-semibold text-sm">
                         {item.title}
@@ -344,6 +387,65 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+      {mobileOpen && (
+  <div className="fixed inset-0 bg-white z-50 lg:hidden">
+    {/* TOP */}
+    <div className="flex justify-between items-center px-6 py-4 border-b">
+      <img src="/logo.png" className="h-10" alt="Ametecs" />
+      <button onClick={() => setMobileOpen(false)}>
+        <FiX className="text-2xl" />
+      </button>
+    </div>
+
+    {/* CONTENT */}
+    <div className="p-6 space-y-6 overflow-y-auto">
+
+      {/* WHO WE ARE */}
+      {whoWeAre.map(item => (
+        <button
+          key={item.id}
+          onClick={() => {
+            handleWhoItemClick(item);
+            setMobileOpen(false);
+          }}
+          className="block w-full text-left py-3 font-medium"
+        >
+          {item.label}
+        </button>
+      ))}
+
+      {/* SERVICES */}
+      <div className="pt-4 border-t">
+        {whatWeDo[0].items.map(item => (
+          <Link
+            key={item.title}
+            to={item.link}
+            onClick={() => setMobileOpen(false)}
+            className="flex items-center gap-3 py-3"
+          >
+            <span className="text-blue-600">{item.icon}</span>
+            <span>{item.title}</span>
+          </Link>
+        ))}
+      </div>
+
+      {/* PRODUCTS */}
+      <div className="pt-4 border-t">
+        {whatWeDo[1].items.map(item => (
+          <a
+            key={item.title}
+            href={item.link}
+            className="flex items-center gap-3 py-3"
+          >
+            <span className="text-blue-600">{item.icon}</span>
+            <span>{item.title}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
     </header>
   );
 }
