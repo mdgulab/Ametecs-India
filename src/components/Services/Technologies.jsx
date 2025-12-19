@@ -22,7 +22,7 @@ import {
   SiOpenai,
 } from "react-icons/si";
 
-import { technologiesData, serviceTechMap } from "./techData";
+import { technologiesData, serviceTechMap } from "./TechData";
 
 /* ================= ICON MAP ================= */
 const techIconMap = {
