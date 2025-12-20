@@ -26,6 +26,7 @@ import {
   FiMenu,
   FiX,
 } from "react-icons/fi";
+import { useEffect } from "react";
 
 /* =======================
    WHO WE ARE
@@ -237,6 +238,18 @@ export default function Header() {
 
     navigate(item.link);
   };
+  useEffect(() => {
+  if (mobileOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [mobileOpen]);
+
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b shadow">
@@ -387,8 +400,11 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-      {mobileOpen && (
-  <div className="fixed inset-0 bg-white z-50 lg:hidden">
+     
+
+ {mobileOpen && (
+  <div className="fixed inset-0 bg-white z-50 lg:hidden flex flex-col min-h-[100dvh]">
+    
     {/* TOP */}
     <div className="flex justify-between items-center px-6 py-4 border-b">
       <img src="/logo.png" className="h-10" alt="Ametecs" />
@@ -397,8 +413,8 @@ export default function Header() {
       </button>
     </div>
 
-    {/* CONTENT */}
-    <div className="p-6 space-y-6 overflow-y-auto">
+    {/* SCROLLABLE CONTENT */}
+    <div className="flex-1 p-6 pb-24 space-y-6 overflow-y-auto overscroll-contain">
 
       {/* WHO WE ARE */}
       {whoWeAre.map(item => (
@@ -442,9 +458,18 @@ export default function Header() {
           </a>
         ))}
       </div>
+
+      {/* EXTRA LINKS (Career / Contact) */}
+      <div className="pt-5 border-t space-y-4">
+        <Link to="/career" onClick={() => setMobileOpen(false)}><b>Career</b></Link><br />
+        <br />
+        <Link to="/contact" onClick={() => setMobileOpen(false)}><b>Contact</b></Link>
+      </div>
+
     </div>
   </div>
 )}
+
 
     </header>
   );
