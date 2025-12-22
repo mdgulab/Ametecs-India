@@ -29,6 +29,7 @@ import BlogList from "./components/Blogs/BlogList";
 import BlogDetails from "./components/Blogs/BlogDetails";
 import HomeBlogSection from "./components/Blogs/HomeBlogSection";
 import ScrollToTop from "./components/common/ScrollToTop";
+import SmartDCM from "./components/Products/SmartDCM/home";
 
 // import WhyAmetecs from "./components/WhyAmetecs";
 export default function App() {
@@ -91,6 +92,10 @@ export default function App() {
         <Route path="/blogs/:slug" element={<BlogDetails/>} />
         {/* CONTACT PAGE (if you enable it later) */}
         {/* <Route path="/contact" element={<Contact />} /> */}
+
+        {/* Products */}
+        <Route path="/smartdcm" element={<SmartDCM/>}/>
+
       </Routes>
   
       {/* GLOBAL COMPONENTS */}

@@ -6,6 +6,7 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    
     extend: {
       colors: {
         
@@ -25,6 +26,7 @@ module.exports = {
      fontFamily: {
   sans: ["Poppins", "sans-serif"],
   },
+  
   backdropBlur: {},
         // Optional: provide a named primary for direct use (bg-primary, text-primary)
         primary: {
@@ -32,10 +34,13 @@ module.exports = {
           600: '#006699',
         },
       },
+      
     },
   },
   plugins: [],
- 
+  
+
 };
+
 
  

@@ -150,7 +150,7 @@ const whatWeDo = [
       {
   title: "SmartDCM",
   subtitle: "AI collection CRM & dialer",
-  link: "https://ametecsindia.com/smartdcm.html",
+  link: "/smartdcm",
   icon: <FiPhoneCall />,    // ☎️ Dialer
 },
 
